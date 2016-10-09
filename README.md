@@ -6,7 +6,7 @@
 
 RxKeyboard provides a reactive way of keyboard handling. Forget about `UIKeyboardWillShow` and `UIKeyboardWillHide`. It also perfectly works with `UIScrollViewKeyboardDismissMode.interactive`.
 
-![rxkeyboard mov](https://cloud.githubusercontent.com/assets/931655/19223553/82b3fa5a-8ead-11e6-8cb5-ec13ee09eb50.gif)
+![rxkeyboard](https://cloud.githubusercontent.com/assets/931655/19223656/14bd915c-8eb0-11e6-93ea-7618fc9c5d81.gif)
 
 ## At a Glance
 
