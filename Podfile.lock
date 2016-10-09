@@ -1,0 +1,22 @@
+PODS:
+  - RxCocoa (3.0.0-beta.2):
+    - RxSwift (~> 3.0.0-beta.2)
+  - RxSwift (3.0.0-beta.2)
+  - Then (2.0.0)
+  - UITextView+Placeholder (1.2.0)
+
+DEPENDENCIES:
+  - RxCocoa (= 3.0.0-beta.2)
+  - RxSwift (= 3.0.0-beta.2)
+  - Then (~> 2.0)
+  - UITextView+Placeholder (~> 1.2)
+
+SPEC CHECKSUMS:
+  RxCocoa: 1dd105d8a4e18034ccd7bd6d136445363ce67c8e
+  RxSwift: 0ea939d7d97cb70657190ffde8dc2a9b455778fc
+  Then: 460074ffe907de3536d5e88f189dac5ef7cf0869
+  UITextView+Placeholder: 77680995fcdd07c3f52ec92fe1150874a2ac89ff
+
+PODFILE CHECKSUM: 460cb8381f753d6dac8c1edf7da6fb83d58a869d
+
+COCOAPODS: 1.0.1
