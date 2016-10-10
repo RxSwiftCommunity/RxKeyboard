@@ -11,13 +11,19 @@ import UIKit
 import RxCocoa
 import RxSwift
 
+/// RxKeyboard provides a reactive way of observing keyboard frame changes.
 public class RxKeyboard: NSObject {
 
   // MARK: Public
 
+  /// Get a singleton instance.
   public static let instance = RxKeyboard()
 
+  /// An observable keyboard frame.
   public let frame: Driver<CGRect>
+
+  /// An observable visible height of keyboard. Emits keyboard height if the keyboard is visible
+  /// or `0` if the keyboard is not visible.
   public let visibleHeight: Driver<CGFloat>
 
 
