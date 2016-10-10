@@ -8,6 +8,8 @@ RxKeyboard provides a reactive way of observing keyboard frame changes. Forget a
 
 ![rxkeyboard](https://cloud.githubusercontent.com/assets/931655/19223656/14bd915c-8eb0-11e6-93ea-7618fc9c5d81.gif)
 
+> ▲ Interactive keyboard dismissing in UITextView.
+
 ## Getting Started
 
 RxKeyboard provides two [`Driver`](https://github.com/ReactiveX/RxSwift/blob/master/Documentation/Units.md#driver-unit)s.
