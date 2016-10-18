@@ -3,8 +3,8 @@ platform :ios, '8.0'
 target 'RxKeyboard' do
   use_frameworks!
 
-  pod 'RxSwift', '3.0.0-beta.2'
-  pod 'RxCocoa', '3.0.0-beta.2'
+  pod 'RxSwift', '3.0.0-rc.1'
+  pod 'RxCocoa', '3.0.0-rc.1'
 
   target 'RxKeyboardDemo' do
     pod 'Then', '~> 2.0'
