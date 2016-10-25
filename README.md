@@ -80,8 +80,8 @@ RxKeyboard.instance.frame
     
 ## Dependencies
 
-- [RxSwift](https://github.com/ReactiveX/RxSwift) (= 3.0.0-rc.1)
-- [RxCocoa](https://github.com/ReactiveX/RxSwift) (= 3.0.0-rc.1)
+- [RxSwift](https://github.com/ReactiveX/RxSwift) (>= 3.0)
+- [RxCocoa](https://github.com/ReactiveX/RxSwift) (>= 3.0)
 
 ## Requirements
 
@@ -93,13 +93,13 @@ RxKeyboard.instance.frame
 - **Using [CocoaPods](https://cocoapods.org)**:
 
     ```ruby
-    pod 'RxKeyboard', '~> 0.2'
+    pod 'RxKeyboard', '~> 0.3'
     ```
 
 - **Using [Carthage](https://github.com/Carthage/Carthage)**:
 
     ```
-    github "devxoul/RxKeyboard" ~> 0.2
+    github "devxoul/RxKeyboard" ~> 0.3
     ```
 
 ## License
