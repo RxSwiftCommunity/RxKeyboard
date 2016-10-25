@@ -2,6 +2,7 @@
 
 ![Swift](https://img.shields.io/badge/Swift-3.0-orange.svg)
 [![CocoaPods](http://img.shields.io/cocoapods/v/RxKeyboard.svg)](https://cocoapods.org/pods/RxKeyboard)
+[![Build Status](https://travis-ci.org/RxSwiftCommunity/RxKeyboard.svg?branch=master)](https://travis-ci.org/RxSwiftCommunity/RxKeyboard)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 RxKeyboard provides a reactive way of observing keyboard frame changes. Forget about keyboard notifications. It also perfectly works with `UIScrollViewKeyboardDismissMode.interactive`.
