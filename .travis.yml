@@ -1,0 +1,17 @@
+language: objective-c
+osx_image: xcode8
+sudo: false
+rvm:
+  - 2.3
+
+cache:
+  - bundler
+  - cocoapods
+
+install:
+  - bundle install --deployment
+  - bundle exec pod --version
+  - bundle exec pod repo update --silent
+
+script:
+  - bundle exec pod lib lint --verbose --allow-warnings --fail-fast
