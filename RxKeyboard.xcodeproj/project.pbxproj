@@ -9,15 +9,14 @@
 /* Begin PBXBuildFile section */
 		0310C6741DA9525200BDA512 /* RxKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 0310C6711DA9525200BDA512 /* RxKeyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0310C6771DA9535200BDA512 /* RxKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0310C6761DA9535200BDA512 /* RxKeyboard.swift */; };
-		035BC8301DAADE86006CA9BE /* RxKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A258CB1DA94EC50035A85B /* RxKeyboard.framework */; };
 		035BC8311DAADE86006CA9BE /* RxKeyboard.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03A258CB1DA94EC50035A85B /* RxKeyboard.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		035F28D11DA95C050060CE31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 035F28C71DA95C050060CE31 /* Assets.xcassets */; };
 		035F28D21DA95C050060CE31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035F28C81DA95C050060CE31 /* LaunchScreen.storyboard */; };
 		035F28D51DA95C050060CE31 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 035F28D01DA95C050060CE31 /* Info.plist */; };
 		035F28D61DA95C580060CE31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F28CB1DA95C050060CE31 /* AppDelegate.swift */; };
 		035F28D71DA95C5B0060CE31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F28CD1DA95C050060CE31 /* ViewController.swift */; };
-		D13DE89339E763D88B79CE57 /* Pods_RxKeyboard_RxKeyboardDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C5694DEDB5A71088EEF0403 /* Pods_RxKeyboard_RxKeyboardDemo.framework */; };
-		EEB90A0DBE08D447B7017324 /* Pods_RxKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B5514D50F2D8B726D6C4819 /* Pods_RxKeyboard.framework */; };
+		6AD3811CD7189FA4F0591939 /* Pods_RxKeyboard_RxKeyboardDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DB337D74AA6D565E5CE2A5 /* Pods_RxKeyboard_RxKeyboardDemo.framework */; };
+		821987888EC139742BEBB457 /* Pods_RxKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF710B8277B15EE73A683C27 /* Pods_RxKeyboard.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,12 +54,12 @@
 		035F28CD1DA95C050060CE31 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		035F28D01DA95C050060CE31 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03A258CB1DA94EC50035A85B /* RxKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		189A9A3CDFBB45473D645FC9 /* Pods-RxKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxKeyboard/Pods-RxKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
-		1C5694DEDB5A71088EEF0403 /* Pods_RxKeyboard_RxKeyboardDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxKeyboard_RxKeyboardDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FE99992B873C9B722A09647 /* Pods-RxKeyboard-RxKeyboardDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxKeyboard-RxKeyboardDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxKeyboard-RxKeyboardDemo/Pods-RxKeyboard-RxKeyboardDemo.release.xcconfig"; sourceTree = "<group>"; };
-		6B5514D50F2D8B726D6C4819 /* Pods_RxKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		74662D97695648D5BBE822D1 /* Pods-RxKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxKeyboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxKeyboard/Pods-RxKeyboard.release.xcconfig"; sourceTree = "<group>"; };
-		CA8C8F4AF3461875F37DF435 /* Pods-RxKeyboard-RxKeyboardDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxKeyboard-RxKeyboardDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxKeyboard-RxKeyboardDemo/Pods-RxKeyboard-RxKeyboardDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		690AFC2A50CA7F870AB369D8 /* Pods-RxKeyboard-RxKeyboardDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxKeyboard-RxKeyboardDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxKeyboard-RxKeyboardDemo/Pods-RxKeyboard-RxKeyboardDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		73A18B0F682AE880DEE5D35D /* Pods-RxKeyboard-RxKeyboardDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxKeyboard-RxKeyboardDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxKeyboard-RxKeyboardDemo/Pods-RxKeyboard-RxKeyboardDemo.release.xcconfig"; sourceTree = "<group>"; };
+		9B76866DCFC9F115E5B14D18 /* Pods-RxKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxKeyboard/Pods-RxKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
+		9DFDA04C2428D8A681A0A9D4 /* Pods-RxKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxKeyboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxKeyboard/Pods-RxKeyboard.release.xcconfig"; sourceTree = "<group>"; };
+		B8DB337D74AA6D565E5CE2A5 /* Pods_RxKeyboard_RxKeyboardDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxKeyboard_RxKeyboardDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF710B8277B15EE73A683C27 /* Pods_RxKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,8 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				035BC8301DAADE86006CA9BE /* RxKeyboard.framework in Frameworks */,
-				D13DE89339E763D88B79CE57 /* Pods_RxKeyboard_RxKeyboardDemo.framework in Frameworks */,
+				6AD3811CD7189FA4F0591939 /* Pods_RxKeyboard_RxKeyboardDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEB90A0DBE08D447B7017324 /* Pods_RxKeyboard.framework in Frameworks */,
+				821987888EC139742BEBB457 /* Pods_RxKeyboard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,7 +123,6 @@
 			children = (
 				035F28CB1DA95C050060CE31 /* AppDelegate.swift */,
 				035F28CC1DA95C050060CE31 /* ViewControllers */,
-				035F28CE1DA95C050060CE31 /* Views */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -136,13 +133,6 @@
 				035F28CD1DA95C050060CE31 /* ViewController.swift */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		035F28CE1DA95C050060CE31 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		035F28CF1DA95C050060CE31 /* Supporting Files */ = {
@@ -160,8 +150,8 @@
 				0310C6721DA9525200BDA512 /* Supporting Files */,
 				035F28C51DA95C050060CE31 /* Demo */,
 				03A258CC1DA94EC50035A85B /* Products */,
-				9B41B317F6A0E7E5C546535A /* Pods */,
-				EAB6715D6F9BA92FFF5E19D0 /* Frameworks */,
+				C747FE8AEC74B1AC250EA766 /* Pods */,
+				69903F80D8F47BD822D2E870 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,24 +164,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9B41B317F6A0E7E5C546535A /* Pods */ = {
+		69903F80D8F47BD822D2E870 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				189A9A3CDFBB45473D645FC9 /* Pods-RxKeyboard.debug.xcconfig */,
-				74662D97695648D5BBE822D1 /* Pods-RxKeyboard.release.xcconfig */,
-				CA8C8F4AF3461875F37DF435 /* Pods-RxKeyboard-RxKeyboardDemo.debug.xcconfig */,
-				1FE99992B873C9B722A09647 /* Pods-RxKeyboard-RxKeyboardDemo.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		EAB6715D6F9BA92FFF5E19D0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6B5514D50F2D8B726D6C4819 /* Pods_RxKeyboard.framework */,
-				1C5694DEDB5A71088EEF0403 /* Pods_RxKeyboard_RxKeyboardDemo.framework */,
+				BF710B8277B15EE73A683C27 /* Pods_RxKeyboard.framework */,
+				B8DB337D74AA6D565E5CE2A5 /* Pods_RxKeyboard_RxKeyboardDemo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C747FE8AEC74B1AC250EA766 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9B76866DCFC9F115E5B14D18 /* Pods-RxKeyboard.debug.xcconfig */,
+				9DFDA04C2428D8A681A0A9D4 /* Pods-RxKeyboard.release.xcconfig */,
+				690AFC2A50CA7F870AB369D8 /* Pods-RxKeyboard-RxKeyboardDemo.debug.xcconfig */,
+				73A18B0F682AE880DEE5D35D /* Pods-RxKeyboard-RxKeyboardDemo.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,13 +202,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0310C68B1DA9572500BDA512 /* Build configuration list for PBXNativeTarget "RxKeyboardDemo" */;
 			buildPhases = (
-				C988D72F164D6D1CDC5EF7D1 /* [CP] Check Pods Manifest.lock */,
+				D00765659EA51FF6D4470D74 /* [CP] Check Pods Manifest.lock */,
 				0310C6781DA9572500BDA512 /* Sources */,
 				0310C6791DA9572500BDA512 /* Frameworks */,
 				0310C67A1DA9572500BDA512 /* Resources */,
 				035BC8321DAADE86006CA9BE /* Embed Frameworks */,
-				37F4BB661BE4353EBE703890 /* [CP] Embed Pods Frameworks */,
-				0CF74BA77CDCE6B0D04FCF9D /* [CP] Copy Pods Resources */,
+				B58E9A5368F1B1F14314DA10 /* [CP] Embed Pods Frameworks */,
+				743806DE7823E9F414644E2E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,12 +224,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03A258D31DA94EC50035A85B /* Build configuration list for PBXNativeTarget "RxKeyboard" */;
 			buildPhases = (
-				BD4DBC7F8520F87DD19B15E8 /* [CP] Check Pods Manifest.lock */,
+				A42166AD0BFF3AD035589BB6 /* [CP] Check Pods Manifest.lock */,
 				03A258C61DA94EC50035A85B /* Sources */,
 				03A258C71DA94EC50035A85B /* Frameworks */,
 				03A258C81DA94EC50035A85B /* Headers */,
 				03A258C91DA94EC50035A85B /* Resources */,
-				4C3074455A0DAB94A9A28C47 /* [CP] Copy Pods Resources */,
+				12005C4B2ACA4A9878ADA7CA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -311,37 +301,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0CF74BA77CDCE6B0D04FCF9D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxKeyboard-RxKeyboardDemo/Pods-RxKeyboard-RxKeyboardDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		37F4BB661BE4353EBE703890 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxKeyboard-RxKeyboardDemo/Pods-RxKeyboard-RxKeyboardDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4C3074455A0DAB94A9A28C47 /* [CP] Copy Pods Resources */ = {
+		12005C4B2ACA4A9878ADA7CA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -356,7 +316,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxKeyboard/Pods-RxKeyboard-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BD4DBC7F8520F87DD19B15E8 /* [CP] Check Pods Manifest.lock */ = {
+		743806DE7823E9F414644E2E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxKeyboard-RxKeyboardDemo/Pods-RxKeyboard-RxKeyboardDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A42166AD0BFF3AD035589BB6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -371,7 +346,22 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		C988D72F164D6D1CDC5EF7D1 /* [CP] Check Pods Manifest.lock */ = {
+		B58E9A5368F1B1F14314DA10 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxKeyboard-RxKeyboardDemo/Pods-RxKeyboard-RxKeyboardDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D00765659EA51FF6D4470D74 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -430,7 +420,7 @@
 /* Begin XCBuildConfiguration section */
 		0310C68C1DA9572500BDA512 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CA8C8F4AF3461875F37DF435 /* Pods-RxKeyboard-RxKeyboardDemo.debug.xcconfig */;
+			baseConfigurationReference = 690AFC2A50CA7F870AB369D8 /* Pods-RxKeyboard-RxKeyboardDemo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -445,7 +435,7 @@
 		};
 		0310C68D1DA9572500BDA512 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1FE99992B873C9B722A09647 /* Pods-RxKeyboard-RxKeyboardDemo.release.xcconfig */;
+			baseConfigurationReference = 73A18B0F682AE880DEE5D35D /* Pods-RxKeyboard-RxKeyboardDemo.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -561,11 +551,12 @@
 		};
 		03A258D41DA94EC50035A85B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 189A9A3CDFBB45473D645FC9 /* Pods-RxKeyboard.debug.xcconfig */;
+			baseConfigurationReference = 9B76866DCFC9F115E5B14D18 /* Pods-RxKeyboard.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -588,7 +579,7 @@
 		};
 		03A258D51DA94EC50035A85B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 74662D97695648D5BBE822D1 /* Pods-RxKeyboard.release.xcconfig */;
+			baseConfigurationReference = 9DFDA04C2428D8A681A0A9D4 /* Pods-RxKeyboard.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;

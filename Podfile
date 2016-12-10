@@ -9,6 +9,7 @@ target 'RxKeyboard' do
   target 'RxKeyboardDemo' do
     pod 'Then', '~> 2.0'
     pod 'UITextView+Placeholder', '~> 1.2'
+    pod 'RxKeyboard', :path => './'
   end
 
 end
