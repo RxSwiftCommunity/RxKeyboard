@@ -1,22 +1,31 @@
 PODS:
   - RxCocoa (3.0.0):
     - RxSwift (~> 3.0)
+  - RxKeyboard (0.3.1):
+    - RxCocoa (>= 3.0)
+    - RxSwift (>= 3.0)
   - RxSwift (3.0.0)
   - Then (2.0.0)
   - UITextView+Placeholder (1.2.0)
 
 DEPENDENCIES:
   - RxCocoa (>= 3.0)
+  - RxKeyboard (from `./`)
   - RxSwift (>= 3.0)
   - Then (~> 2.0)
   - UITextView+Placeholder (~> 1.2)
 
+EXTERNAL SOURCES:
+  RxKeyboard:
+    :path: ./
+
 SPEC CHECKSUMS:
   RxCocoa: 0a2f3ae381cf16f4021a4cee7a4420f83058a965
+  RxKeyboard: d1a4617b8b181bf5ed4adea0b6e8ed6b0399b036
   RxSwift: a930cd662f5b4a7ca9dc3518585dba91dadf497c
   Then: 460074ffe907de3536d5e88f189dac5ef7cf0869
   UITextView+Placeholder: 77680995fcdd07c3f52ec92fe1150874a2ac89ff
 
-PODFILE CHECKSUM: 1e89b190ef8aa8b8b99971927895315e490fd802
+PODFILE CHECKSUM: 8b78a24b6ceb198a115a3584229a5b64f01fbc52
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.0.beta.1
