@@ -1,1 +1,3 @@
 github "ReactiveX/RxSwift" >= 3.0
+github "devxoul/Then" >= 2.0
+github "devxoul/UITextView-Placeholder" >= 1.2

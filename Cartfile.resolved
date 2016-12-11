@@ -1,1 +1,3 @@
-github "ReactiveX/RxSwift" "3.0.0"
+github "ReactiveX/RxSwift" "3.0.1"
+github "devxoul/Then" "2.1.0"
+github "devxoul/UITextView-Placeholder" "1.2.0"
