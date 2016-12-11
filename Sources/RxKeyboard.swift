@@ -66,16 +66,7 @@ public class RxKeyboard: NSObject {
     // keyboard will hide
     let willHide = NotificationCenter.default.rx.notification(.UIKeyboardWillHide)
       .map { notification -> CGRect in
-        let rectValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue
-        return rectValue?.cgRectValue ?? defaultFrame
-      }
-      .map { frame -> CGRect in
-        if frame.origin.y < 0 { // if went to wrong frame
-          var newFrame = frame
-          newFrame.origin.y = UIScreen.main.bounds.height
-          return newFrame
-        }
-        return frame
+        return CGRect(x: 0, y: UIScreen.main.bounds.height, width: 0, height: 0)
       }
 
     // pan gesture
