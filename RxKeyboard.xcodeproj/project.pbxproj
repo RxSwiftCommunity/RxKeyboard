@@ -19,6 +19,7 @@
 		035F28D61DA95C580060CE31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F28CB1DA95C050060CE31 /* AppDelegate.swift */; };
 		035F28D71DA95C5B0060CE31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F28CD1DA95C050060CE31 /* ViewController.swift */; };
 		198DAF5A87143EF56B410376 /* Pods_RxKeyboard_RxKeyboardDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FD6156651B6B63C23AC292E /* Pods_RxKeyboard_RxKeyboardDemo.framework */; };
+		641FB273609F21EA14F6095F /* Pods_RxKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 387849BCC512BDBC37A69346 /* Pods_RxKeyboard.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 			files = (
 				034E7CA71DAD548900CFC398 /* RxCocoa.framework in Frameworks */,
 				034E7CA81DAD548900CFC398 /* RxSwift.framework in Frameworks */,
+				641FB273609F21EA14F6095F /* Pods_RxKeyboard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,10 +258,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03A258D31DA94EC50035A85B /* Build configuration list for PBXNativeTarget "RxKeyboard" */;
 			buildPhases = (
+				BE606DDA4B61A0A93A63B295 /* [CP] Check Pods Manifest.lock */,
 				03A258C61DA94EC50035A85B /* Sources */,
 				03A258C71DA94EC50035A85B /* Frameworks */,
 				03A258C81DA94EC50035A85B /* Headers */,
 				03A258C91DA94EC50035A85B /* Resources */,
+				D4203A7C88F4012FC8BC79F0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -360,7 +364,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		9656CB0F46CF53436628B86B /* [CP] Embed Pods Frameworks */ = {
@@ -376,6 +380,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxKeyboard-RxKeyboardDemo/Pods-RxKeyboard-RxKeyboardDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE606DDA4B61A0A93A63B295 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D4203A7C88F4012FC8BC79F0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxKeyboard/Pods-RxKeyboard-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
