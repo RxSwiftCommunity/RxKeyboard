@@ -20,11 +20,17 @@ public class RxKeyboard: NSObject {
   public static let instance = RxKeyboard()
 
   /// An observable keyboard frame.
-  public let frame: Driver<CGRect>
+  ///
+  /// The sequence of values will be subscribed on `MainScheduler`
+  /// (as same as `subscribeOn(MainScheduler.instance)`).
+  public let frame: Observable<CGRect>
 
   /// An observable visible height of keyboard. Emits keyboard height if the keyboard is visible
   /// or `0` if the keyboard is not visible.
-  public let visibleHeight: Driver<CGFloat>
+  ///
+  /// The sequence of values will be subscribed on `MainScheduler`
+  /// (as same as `subscribeOn(MainScheduler.instance)`).
+  public let visibleHeight: Observable<CGFloat>
 
 
   // MARK: Private
@@ -43,7 +49,12 @@ public class RxKeyboard: NSObject {
       height: 0
     )
     let frameVariable = Variable<CGRect>(defaultFrame)
-    self.frame = frameVariable.asDriver()
+    self.frame = frameVariable.asObservable()
+      .distinctUntilChanged()
+      // `ConcurrentMainScheduler` is more recommended to use with `subscribeOn` operator but
+      // it's important to make sequence emit values in serial. See #13 if you wonder what happens
+      // if the sequence doesn't ensure the value order.
+      .subscribeOn(MainScheduler.instance)
     self.visibleHeight = self.frame.map { UIScreen.main.bounds.height - $0.origin.y }
 
     super.init()
