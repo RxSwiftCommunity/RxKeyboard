@@ -43,7 +43,7 @@ public class RxKeyboard: NSObject {
       height: 0
     )
     let frameVariable = Variable<CGRect>(defaultFrame)
-    self.frame = frameVariable.asDriver()
+    self.frame = frameVariable.asDriver().distinctUntilChanged()
     self.visibleHeight = self.frame.map { UIScreen.main.bounds.height - $0.origin.y }
 
     super.init()
@@ -82,7 +82,8 @@ public class RxKeyboard: NSObject {
     let didPan = self.panRecognizer.rx.event
       .withLatestFrom(frameVariable.asObservable()) { ($0, $1) }
       .flatMap { (gestureRecognizer, frame) -> Observable<CGRect> in
-        guard let window = UIApplication.shared.windows.first,
+        guard case .changed = gestureRecognizer.state,
+          let window = UIApplication.shared.windows.first,
           frame.origin.y < UIScreen.main.bounds.height
         else { return .empty() }
         let origin = gestureRecognizer.location(in: window)
