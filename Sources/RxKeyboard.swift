@@ -50,6 +50,7 @@ public class RxKeyboard: NSObject {
     )
     let frameVariable = Variable<CGRect>(defaultFrame)
     self.frame = frameVariable.asObservable()
+      .distinctUntilChanged()
       // `ConcurrentMainScheduler` is more recommended to use with `subscribeOn` operator but
       // it's important to make sequence emit values in serial. See #13 if you wonder what happens
       // if the sequence doesn't ensure the value order.
