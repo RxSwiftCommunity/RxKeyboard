@@ -49,13 +49,12 @@ public class RxKeyboard: NSObject {
     let frameVariable = Variable<CGRect>(defaultFrame)
     self.frame = frameVariable.asDriver().distinctUntilChanged()
     self.visibleHeight = self.frame.map { UIScreen.main.bounds.height - $0.origin.y }
-    self.willShowVisibleHeight = NotificationCenter.default.rx.notification(.UIKeyboardWillShow)
-      .map { notification -> CGFloat in
-        let rectValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue
-        let keyboardFrame = rectValue?.cgRectValue ?? defaultFrame
-        return UIScreen.main.bounds.height - keyboardFrame.origin.y
+    self.willShowVisibleHeight = self.visibleHeight
+      .scan((visibleHeight: 0, isShowing: false)) { lastState, newVisibleHeight in
+        return (visibleHeight: newVisibleHeight, isShowing: lastState.visibleHeight == 0)
       }
-      .asDriver { _ in .empty() }
+      .filter { state in state.isShowing }
+      .map { state in state.visibleHeight }
 
     super.init()
 
