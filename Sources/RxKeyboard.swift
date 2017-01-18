@@ -32,6 +32,10 @@ public class RxKeyboard: NSObject {
     }
   }
 
+  /// Same with `visibleHeight` but only emits values when keyboard is about to show. This is
+  /// useful when adjusting scroll view content offset.
+  public let willShowVisibleHeight: Driver<CGFloat>
+
   // MARK: Private
 
   fileprivate let disposeBag = DisposeBag()
@@ -47,8 +51,14 @@ public class RxKeyboard: NSObject {
       height: 0
     )
     let frameVariable = Variable<CGRect>(defaultFrame)
-    self.frame = frameVariable.asDriver()
+    self.frame = frameVariable.asDriver().distinctUntilChanged()
     self.visibleHeight = self.frame.map { UIScreen.main.bounds.height - $0.origin.y }
+    self.willShowVisibleHeight = self.visibleHeight
+      .scan((visibleHeight: 0, isShowing: false)) { lastState, newVisibleHeight in
+        return (visibleHeight: newVisibleHeight, isShowing: lastState.visibleHeight == 0)
+      }
+      .filter { state in state.isShowing }
+      .map { state in state.visibleHeight }
 
     super.init()
 
@@ -86,7 +96,8 @@ public class RxKeyboard: NSObject {
       .skipWhile { $0.delegate == nil }
       .withLatestFrom(frameVariable.asObservable()) { ($0, $1) }
       .flatMap { (gestureRecognizer, frame) -> Observable<CGRect> in
-        guard let window = UIApplication.shared.windows.first,
+        guard case .changed = gestureRecognizer.state,
+          let window = UIApplication.shared.windows.first,
           frame.origin.y < UIScreen.main.bounds.height
         else { return .empty() }
         let origin = gestureRecognizer.location(in: window)

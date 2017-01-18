@@ -7,9 +7,8 @@
 
 RxKeyboard provides a reactive way of observing keyboard frame changes. Forget about keyboard notifications. It also perfectly works with `UIScrollViewKeyboardDismissMode.interactive`.
 
-![rxkeyboard](https://cloud.githubusercontent.com/assets/931655/19223656/14bd915c-8eb0-11e6-93ea-7618fc9c5d81.gif)
-
-> ▲ Interactive keyboard dismissing in UITextView.
+![rxkeyboard-message](https://cloud.githubusercontent.com/assets/931655/22062707/625eea7a-ddbe-11e6-9984-529abae1bd1a.gif)
+![rxkeyboard-textview](https://cloud.githubusercontent.com/assets/931655/19223656/14bd915c-8eb0-11e6-93ea-7618fc9c5d81.gif)
 
 ## Getting Started
 
@@ -22,6 +21,10 @@ let frame: Driver<CGRect>
 /// An observable visible height of keyboard. Emits keyboard height if the keyboard is visible
 /// or `0` if the keyboard is not visible.
 let visibleHeight: Driver<CGFloat>
+
+/// Same with `visibleHeight` but only emits values when keyboard is about to show. This is
+/// useful when adjusting scroll view content offset.
+let willShowVisibleHeight: Driver<CGFloat>
 ```
 
 Use `RxKeyboard.instance` to get singleton instance.
@@ -52,6 +55,16 @@ RxKeyboard.instance.frame
       .addDisposableTo(disposeBag)
     ```
 
+- <a name="tip-content-inset" href="#tip-content-offset">🔗</a> **I want to adjust `UIScrollView`'s `contentOffset` to fit keyboard height.**
+
+    ```swift
+    RxKeyboard.instance.willShowVisibleHeight
+      .drive(onNext: { keyboardVisibleHeight in
+        scrollView.contentInset.offset.y += keyboardVisibleHeight
+      })
+      .addDisposableTo(disposeBag)
+    ```
+
 - <a name="tip-toolbar" href="#tip-toolbar">🔗</a> **I want to make `UIToolbar` move along with the keyboard in an interactive dismiss mode. (Just like the wonderful GIF above!)**
 
     If you're not using Auto Layout:
@@ -74,7 +87,7 @@ RxKeyboard.instance.frame
       .addDisposableTo(disposeBag)
     ```
 
-    > **Note**: In real world, you should use `setNeedsLayout()` and `layoutIfNeeded()` with animation block. See the [demo project](https://github.com/devxoul/RxKeyboard/blob/master/Demo/Sources/ViewControllers/ViewController.swift#L62-L70) for example.
+    > **Note**: In real world, you should use `setNeedsLayout()` and `layoutIfNeeded()` with animation block. See the [demo project](https://github.com/RxSwiftCommunity/RxKeyboard/blob/master/Demo/Sources/ViewControllers/MessageListViewController.swift#L92-L105) for example.
 
 - Anything else? Please open an issue or make a Pull Request.
     
@@ -93,13 +106,13 @@ RxKeyboard.instance.frame
 - **Using [CocoaPods](https://cocoapods.org)**:
 
     ```ruby
-    pod 'RxKeyboard', '~> 0.3'
+    pod 'RxKeyboard', '~> 0.4'
     ```
 
 - **Using [Carthage](https://github.com/Carthage/Carthage)**:
 
     ```
-    github "devxoul/RxKeyboard" ~> 0.3
+    github "devxoul/RxKeyboard" ~> 0.4
     ```
 
 ## License
