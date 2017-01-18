@@ -26,6 +26,10 @@ public class RxKeyboard: NSObject {
   /// or `0` if the keyboard is not visible.
   public let visibleHeight: Driver<CGFloat>
 
+  /// Same with `visibleHeight` but only emits values when keyboard is about to show. This is
+  /// useful when adjusting scroll view content offset.
+  public let willShowVisibleHeight: Driver<CGFloat>
+
 
   // MARK: Private
 
@@ -45,6 +49,13 @@ public class RxKeyboard: NSObject {
     let frameVariable = Variable<CGRect>(defaultFrame)
     self.frame = frameVariable.asDriver()
     self.visibleHeight = self.frame.map { UIScreen.main.bounds.height - $0.origin.y }
+    self.willShowVisibleHeight = NotificationCenter.default.rx.notification(.UIKeyboardWillShow)
+      .map { notification -> CGFloat in
+        let rectValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue
+        let keyboardFrame = rectValue?.cgRectValue ?? defaultFrame
+        return UIScreen.main.bounds.height - keyboardFrame.origin.y
+      }
+      .asDriver { _ in .empty() }
 
     super.init()
 
@@ -79,7 +90,7 @@ public class RxKeyboard: NSObject {
       }
 
     // pan gesture
-    let didPan = self.panRecognizer.rx.event
+    let didPan = self.panRecognizer.rx.event.debug("pan")
       .withLatestFrom(frameVariable.asObservable()) { ($0, $1) }
       .flatMap { (gestureRecognizer, frame) -> Observable<CGRect> in
         guard let window = UIApplication.shared.windows.first,
