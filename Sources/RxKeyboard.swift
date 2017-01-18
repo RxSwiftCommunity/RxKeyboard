@@ -89,7 +89,7 @@ public class RxKeyboard: NSObject {
       }
 
     // pan gesture
-    let didPan = self.panRecognizer.rx.event.debug("pan")
+    let didPan = self.panRecognizer.rx.event
       .withLatestFrom(frameVariable.asObservable()) { ($0, $1) }
       .flatMap { (gestureRecognizer, frame) -> Observable<CGRect> in
         guard case .changed = gestureRecognizer.state,

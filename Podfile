@@ -7,8 +7,14 @@ target 'RxKeyboard' do
   pod 'RxCocoa', '>= 3.0'
 
   target 'RxKeyboardDemo' do
-    pod 'Then', '~> 2.0'
-    pod 'UITextView+Placeholder', '~> 1.2'
+    pod 'Then'
+    pod 'UITextView+Placeholder'
+    pod 'ReusableKit'
+    pod 'SnapKit'
+    pod 'ManualLayout'
+    pod 'SwiftyColor'
+    pod 'SwiftyImage'
+    pod 'CGFloatLiteral'
   end
 
 end

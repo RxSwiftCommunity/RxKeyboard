@@ -8,6 +8,10 @@
 
 import UIKit
 
+import CGFloatLiteral
+import ManualLayout
+import SnapKit
+import SwiftyColor
 import Then
 import UITextView_Placeholder
 
@@ -22,8 +26,11 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
   ) -> Bool {
     let window = UIWindow(frame: UIScreen.main.bounds)
     window.backgroundColor = .white
-    window.rootViewController = UINavigationController(rootViewController: ViewController())
     window.makeKeyAndVisible()
+
+    let messageListViewController = MessageListViewController()
+    let navigationController = UINavigationController(rootViewController: messageListViewController)
+    window.rootViewController = navigationController
 
     self.window = window
     return true
