@@ -55,7 +55,7 @@ RxKeyboard.instance.frame
       .addDisposableTo(disposeBag)
     ```
 
-- <a name="tip-content-inset" href="#tip-content-offset">🔗</a> **I want to adjust `UIScrollView`'s `contentOffset` to fit keyboard height.**
+- <a name="tip-content-offset" href="#tip-content-offset">🔗</a> **I want to adjust `UIScrollView`'s `contentOffset` to fit keyboard height.**
 
     ```swift
     RxKeyboard.instance.willShowVisibleHeight
