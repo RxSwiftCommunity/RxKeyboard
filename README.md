@@ -87,7 +87,7 @@ RxKeyboard.instance.frame
       .addDisposableTo(disposeBag)
     ```
 
-    > **Note**: In real world, you should use `setNeedsLayout()` and `layoutIfNeeded()` with animation block. See the [demo project](https://github.com/RxSwiftCommunity/RxKeyboard/blob/master/Demo/Sources/ViewControllers/MessageListViewController.swift#L92-L105) for example.
+    > **Note**: In real world, you should use `setNeedsLayout()` and `layoutIfNeeded()` with animation block. See the [example project](https://github.com/RxSwiftCommunity/RxKeyboard/blob/master/Example/Sources/ViewControllers/MessageListViewController.swift#L92-L105) for example.
 
 - Anything else? Please open an issue or make a Pull Request.
     
