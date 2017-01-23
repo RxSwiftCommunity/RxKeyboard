@@ -4,6 +4,9 @@ PODS:
   - ReusableKit (1.1.0)
   - RxCocoa (3.1.0):
     - RxSwift (~> 3.1)
+  - RxKeyboard (0.4.0):
+    - RxCocoa (>= 3.0)
+    - RxSwift (>= 3.0)
   - RxSwift (3.1.0)
   - SnapKit (3.1.2)
   - SwiftyColor (1.0.0)
@@ -15,19 +18,23 @@ DEPENDENCIES:
   - CGFloatLiteral
   - ManualLayout
   - ReusableKit
-  - RxCocoa (>= 3.0)
-  - RxSwift (>= 3.0)
+  - RxKeyboard (from `../`)
   - SnapKit
   - SwiftyColor
   - SwiftyImage
   - Then
   - UITextView+Placeholder
 
+EXTERNAL SOURCES:
+  RxKeyboard:
+    :path: "../"
+
 SPEC CHECKSUMS:
   CGFloatLiteral: 5bdcd81cb54b56cd71c4e5e66a33cb86cd51ecbf
   ManualLayout: 68ac8cfa6b5f656f7a9fadec3730208b95986880
   ReusableKit: 89e743a120bab0d95848bff27e481833c2768905
   RxCocoa: 50d7564866da9299161e86a263ce12a0873904d8
+  RxKeyboard: cf7f4463f27e580a3542127877ef9e3a71183744
   RxSwift: 83ff553e7593fdfdcb2562933a64c0284dffdadc
   SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
   SwiftyColor: 7fa09db14051bc5d7f539e1c4576665975225992
@@ -35,6 +42,6 @@ SPEC CHECKSUMS:
   Then: 8496793c8fcac95482b943909b440724c7d8d82c
   UITextView+Placeholder: 77680995fcdd07c3f52ec92fe1150874a2ac89ff
 
-PODFILE CHECKSUM: d30854ce45b111af70ef42468452a63fdf848bc6
+PODFILE CHECKSUM: 49cf5def62bcfa2dfbe0c5118a9372a4162ec992
 
 COCOAPODS: 1.1.1

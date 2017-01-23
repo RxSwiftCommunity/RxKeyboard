@@ -1,0 +1,15 @@
+platform :ios, '8.0'
+
+target 'RxKeyboardExample' do
+  use_frameworks!
+
+  pod 'RxKeyboard', :path => '../'
+  pod 'Then'
+  pod 'UITextView+Placeholder'
+  pod 'ReusableKit'
+  pod 'SnapKit'
+  pod 'ManualLayout'
+  pod 'SwiftyColor'
+  pod 'SwiftyImage'
+  pod 'CGFloatLiteral'
+end

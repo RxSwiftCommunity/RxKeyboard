@@ -5,6 +5,9 @@
       location = "group:RxKeyboard.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Pods/Pods.xcodeproj">
+      location = "group:Example/RxKeyboardExample.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Example/Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

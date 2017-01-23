@@ -1,6 +1,6 @@
 //
 //  MessageListViewController.swift
-//  Demo
+//  RxKeyboardExample
 //
 //  Created by Suyeol Jeon on 09/10/2016.
 //  Copyright © 2016 Suyeol Jeon. All rights reserved.
@@ -69,7 +69,7 @@ class MessageListViewController: UIViewController {
 
   init() {
     super.init(nibName: nil, bundle: nil)
-    self.title = "RxKeyboard Demo"
+    self.title = "RxKeyboard Example"
   }
 
   required init?(coder aDecoder: NSCoder) {

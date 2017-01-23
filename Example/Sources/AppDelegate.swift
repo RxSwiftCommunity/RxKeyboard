@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Demo
+//  RxKeyboardExample
 //
 //  Created by Suyeol Jeon on 09/10/2016.
 //  Copyright © 2016 Suyeol Jeon. All rights reserved.
