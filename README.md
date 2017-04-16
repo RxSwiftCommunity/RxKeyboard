@@ -40,7 +40,7 @@ RxKeyboard.instance.frame
   .drive(onNext: { frame in
     print(frame)
   })
-  .addDisposableTo(disposeBag)
+  .disposed(by: disposeBag)
 ```
 
 ## Tips and Tricks
@@ -52,7 +52,7 @@ RxKeyboard.instance.frame
       .drive(onNext: { keyboardVisibleHeight in
         scrollView.contentInset.bottom = keyboardVisibleHeight
       })
-      .addDisposableTo(disposeBag)
+      .disposed(by: disposeBag)
     ```
 
 - <a name="tip-content-offset" href="#tip-content-offset">🔗</a> **I want to adjust `UIScrollView`'s `contentOffset` to fit keyboard height.**
@@ -62,7 +62,7 @@ RxKeyboard.instance.frame
       .drive(onNext: { keyboardVisibleHeight in
         scrollView.contentInset.offset.y += keyboardVisibleHeight
       })
-      .addDisposableTo(disposeBag)
+      .disposed(by: disposeBag)
     ```
 
 - <a name="tip-toolbar" href="#tip-toolbar">🔗</a> **I want to make `UIToolbar` move along with the keyboard in an interactive dismiss mode. (Just like the wonderful GIF above!)**
@@ -74,7 +74,7 @@ RxKeyboard.instance.frame
       .drive(onNext: { keyboardVisibleHeight in
         toolbar.frame.origin.y = self.view.height - toolbar.frame.height - keyboardVisibleHeight
       })
-      .addDisposableTo(disposeBag)
+      .disposed(by: disposeBag)
     ```
 
     If you're using Auto Layout, you have to capture the toolbar's bottom constraint and set `constant` to keyboard visible height.
@@ -84,7 +84,7 @@ RxKeyboard.instance.frame
       .drive(onNext: { keyboardVisibleHeight in
         toolbarBottomConstraint.constant = -1 * keyboardVisibleHeight
       })
-      .addDisposableTo(disposeBag)
+      .disposed(by: disposeBag)
     ```
 
     > **Note**: In real world, you should use `setNeedsLayout()` and `layoutIfNeeded()` with animation block. See the [example project](https://github.com/RxSwiftCommunity/RxKeyboard/blob/master/Example/Sources/ViewControllers/MessageListViewController.swift#L92-L105) for example.
@@ -93,8 +93,8 @@ RxKeyboard.instance.frame
     
 ## Dependencies
 
-- [RxSwift](https://github.com/ReactiveX/RxSwift) (>= 3.0)
-- [RxCocoa](https://github.com/ReactiveX/RxSwift) (>= 3.0)
+- [RxSwift](https://github.com/ReactiveX/RxSwift) (>= 3.4)
+- [RxCocoa](https://github.com/ReactiveX/RxSwift) (>= 3.4)
 
 ## Requirements
 
