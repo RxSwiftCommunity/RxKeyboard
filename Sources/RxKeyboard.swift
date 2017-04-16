@@ -104,8 +104,8 @@ public class RxKeyboard: NSObject {
 
     // merge into single sequence
     Observable.of(didPan, willChangeFrame, willHide).merge()
-      .bindTo(frameVariable)
-      .addDisposableTo(self.disposeBag)
+      .bind(to: frameVariable)
+      .disposed(by: self.disposeBag)
 
     // gesture recognizer
     self.panRecognizer.delegate = self
@@ -115,7 +115,7 @@ public class RxKeyboard: NSObject {
       .subscribe(onNext: { _ in
         UIApplication.shared.windows.first?.addGestureRecognizer(self.panRecognizer)
       })
-      .addDisposableTo(self.disposeBag)
+      .disposed(by: self.disposeBag)
   }
 
 }
