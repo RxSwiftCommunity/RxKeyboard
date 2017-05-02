@@ -7,12 +7,19 @@ Pod::Spec.new do |s|
   s.author           = { 'Suyeol Jeon' => 'devxoul@gmail.com' }
   s.source           = { :git => 'https://github.com/RxSwiftCommunity/RxKeyboard.git',
                          :tag => s.version.to_s }
-  s.source_files     = 'Sources/*.swift'
   s.frameworks       = 'UIKit', 'Foundation'
   s.requires_arc     = true
 
   s.dependency 'RxSwift', '>= 3.0'
   s.dependency 'RxCocoa', '>= 3.0'
+
+  s.subspec 'Core' do |core|
+    core.source_files = 'Sources/RxKeyboard.swift'
+  end
+
+  s.subspec 'Interactive' do |interactive|
+    interactive.source_files = 'Sources/RxKeyboardInteractive.swift'
+  end
 
   s.ios.deployment_target = '8.0'
 

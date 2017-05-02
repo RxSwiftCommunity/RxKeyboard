@@ -11,6 +11,7 @@
 		0310C6771DA9535200BDA512 /* RxKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0310C6761DA9535200BDA512 /* RxKeyboard.swift */; };
 		03CE448E1E35AAE5006DD6E9 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034E7CA31DAD548900CFC398 /* RxCocoa.framework */; };
 		03CE448F1E35AAE5006DD6E9 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034E7CA41DAD548900CFC398 /* RxSwift.framework */; };
+		407629F61EB906710051197B /* RxKeyboardInteractive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407629F51EB906710051197B /* RxKeyboardInteractive.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		034E7CA41DAD548900CFC398 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		034E7CA51DAD548900CFC398 /* RxTests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTests.framework; path = Carthage/Build/iOS/RxTests.framework; sourceTree = "<group>"; };
 		03A258CB1DA94EC50035A85B /* RxKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		407629F51EB906710051197B /* RxKeyboardInteractive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxKeyboardInteractive.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,7 @@
 			children = (
 				0310C6711DA9525200BDA512 /* RxKeyboard.h */,
 				0310C6761DA9535200BDA512 /* RxKeyboard.swift */,
+				407629F51EB906710051197B /* RxKeyboardInteractive.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0310C6771DA9535200BDA512 /* RxKeyboard.swift in Sources */,
+				407629F61EB906710051197B /* RxKeyboardInteractive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

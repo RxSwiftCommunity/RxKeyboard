@@ -30,11 +30,10 @@ public class RxKeyboard: NSObject {
   /// useful when adjusting scroll view content offset.
   public let willShowVisibleHeight: Driver<CGFloat>
 
+  // MARK: Internal
 
-  // MARK: Private
-
-  fileprivate let disposeBag = DisposeBag()
-  fileprivate let panRecognizer = UIPanGestureRecognizer()
+  internal let disposeBag = DisposeBag()
+  internal let panRecognizer = UIPanGestureRecognizer()
 
 
   // MARK: Initializing
@@ -93,7 +92,7 @@ public class RxKeyboard: NSObject {
       .withLatestFrom(frameVariable.asObservable()) { ($0, $1) }
       .flatMap { (gestureRecognizer, frame) -> Observable<CGRect> in
         guard case .changed = gestureRecognizer.state,
-          let window = UIApplication.shared.windows.first,
+          let window = gestureRecognizer.view,
           frame.origin.y < UIScreen.main.bounds.height
         else { return .empty() }
         let origin = gestureRecognizer.location(in: window)
@@ -109,13 +108,7 @@ public class RxKeyboard: NSObject {
 
     // gesture recognizer
     self.panRecognizer.delegate = self
-    NotificationCenter.default.rx.notification(.UIApplicationDidFinishLaunching)
-      .map { _ in Void() }
-      .startWith(Void()) // when RxKeyboard is initialized before UIApplication.window is created
-      .subscribe(onNext: { _ in
-        UIApplication.shared.windows.first?.addGestureRecognizer(self.panRecognizer)
-      })
-      .addDisposableTo(self.disposeBag)
+    self.attachPanRecognizer()
   }
 
 }
@@ -149,3 +142,21 @@ extension RxKeyboard: UIGestureRecognizerDelegate {
   }
 
 }
+
+// MARK: - Interactive
+
+internal protocol RxKeyboardInteractive {
+
+  var panRecognizer: UIPanGestureRecognizer { get }
+  var disposeBag: DisposeBag { get }
+  func attachPanRecognizer()
+
+}
+
+internal extension RxKeyboardInteractive {
+
+  func attachPanRecognizer() {}
+
+}
+
+extension RxKeyboard: RxKeyboardInteractive {}
