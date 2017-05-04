@@ -12,4 +12,6 @@ target 'RxKeyboardExample' do
   pod 'SwiftyColor'
   pod 'SwiftyImage'
   pod 'CGFloatLiteral'
+
+  target 'RxKeyboardShareExtension'
 end
