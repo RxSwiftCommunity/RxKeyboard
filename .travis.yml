@@ -11,7 +11,7 @@ cache:
 install:
   - bundle install --deployment
   - bundle exec pod --version
-  - bundle exec pod repo update --silent
+  - bundle exec pod repo update --verbose
 
 script:
   - bundle exec pod lib lint --verbose --allow-warnings --fail-fast
