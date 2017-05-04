@@ -35,6 +35,13 @@ public class RxKeyboard: NSObject {
 
   fileprivate let disposeBag = DisposeBag()
   fileprivate let panRecognizer = UIPanGestureRecognizer()
+  fileprivate let application: UIApplication? = {
+    let selector = NSSelectorFromString("sharedApplication")
+    return UIApplication.perform(selector)?.takeRetainedValue() as? UIApplication
+  }()
+  fileprivate var gestureView: UIView? {
+    return self.application?.delegate?.window ?? nil
+  }
 
 
   // MARK: Initializing
@@ -93,10 +100,10 @@ public class RxKeyboard: NSObject {
       .withLatestFrom(frameVariable.asObservable()) { ($0, $1) }
       .flatMap { (gestureRecognizer, frame) -> Observable<CGRect> in
         guard case .changed = gestureRecognizer.state,
-          let window = UIApplication.shared.windows.first,
+          let view = gestureRecognizer.view,
           frame.origin.y < UIScreen.main.bounds.height
         else { return .empty() }
-        let origin = gestureRecognizer.location(in: window)
+        let origin = gestureRecognizer.location(in: view)
         var newFrame = frame
         newFrame.origin.y = max(origin.y, UIScreen.main.bounds.height - frame.height)
         return .just(newFrame)
@@ -113,7 +120,7 @@ public class RxKeyboard: NSObject {
       .map { _ in Void() }
       .startWith(Void()) // when RxKeyboard is initialized before UIApplication.window is created
       .subscribe(onNext: { _ in
-        UIApplication.shared.windows.first?.addGestureRecognizer(self.panRecognizer)
+        self.gestureView?.addGestureRecognizer(self.panRecognizer)
       })
       .disposed(by: self.disposeBag)
   }
