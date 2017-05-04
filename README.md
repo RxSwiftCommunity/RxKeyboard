@@ -89,6 +89,16 @@ RxKeyboard.instance.frame
 
     > **Note**: In real world, you should use `setNeedsLayout()` and `layoutIfNeeded()` with animation block. See the [example project](https://github.com/RxSwiftCommunity/RxKeyboard/blob/master/Example/Sources/ViewControllers/MessageListViewController.swift#L92-L105) for example.
 
+- <a name="tip-app-extension" href="#tip-app-extension">🔗</a> **I want to use RxKeyboard in App Extension.**
+
+    App Extesion doesn't allow the `UIApplication.shared` API so the pan gesture recognizer cannot automatically track the interactive keybord dismissing. You have to do something manually in the App Extension target: setting `gestureView`.
+
+    ```swift
+    // ShareViewController.swift
+    RxKeyboard.instance.gestureView = self.view // add this line on `viewDidLoad()`
+    RxKeyboard.instance.visibleHeight.drive(...)
+    ```
+
 - Anything else? Please open an issue or make a Pull Request.
     
 ## Dependencies
