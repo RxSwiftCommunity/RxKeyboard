@@ -102,13 +102,13 @@ class MessageListViewController: UIViewController {
           self.view.layoutIfNeeded()
         }
       })
-      .addDisposableTo(self.disposeBag)
+      .disposed(by: self.disposeBag)
 
     RxKeyboard.instance.willShowVisibleHeight
       .drive(onNext: { keyboardVisibleHeight in
         self.collectionView.contentOffset.y += keyboardVisibleHeight
       })
-      .addDisposableTo(self.disposeBag)
+      .disposed(by: self.disposeBag)
 
     self.messageInputBar.rx.sendButtonTap
       .subscribe(onNext: { [weak self] text in
@@ -119,7 +119,7 @@ class MessageListViewController: UIViewController {
         self.collectionView.insertItems(at: [indexPath])
         self.collectionView.scrollToItem(at: indexPath, at: [], animated: true)
       })
-      .addDisposableTo(self.disposeBag)
+      .disposed(by: self.disposeBag)
   }
 
 

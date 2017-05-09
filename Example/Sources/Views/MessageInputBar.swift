@@ -61,8 +61,8 @@ final class MessageInputBar: UIView {
 
     self.textView.rx.text
       .map { text in text?.isEmpty == false }
-      .bindTo(self.sendButton.rx.isEnabled)
-      .addDisposableTo(self.disposeBag)
+      .bind(to: self.sendButton.rx.isEnabled)
+      .disposed(by: self.disposeBag)
   }
   
   required init?(coder aDecoder: NSCoder) {
