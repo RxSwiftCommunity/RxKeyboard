@@ -19,6 +19,17 @@ public class RxKeyboard: NSObject {
   /// Get a singleton instance.
   public static let instance = RxKeyboard()
 
+  /// A view that receives pan gesture. The default value is the AppDelegate's window. Set this
+  /// value with the root view controller's view if the target is an App Extension.
+  public var gestureView: UIView? {
+    get { return self._gestureView ?? self.application?.delegate?.window ?? nil }
+    set {
+      self._gestureView = newValue
+      self.panRecognizer.view?.removeGestureRecognizer(self.panRecognizer)
+      newValue?.addGestureRecognizer(self.panRecognizer)
+    }
+  }
+
   /// An observable keyboard frame.
   public let frame: Driver<CGRect>
 
@@ -35,6 +46,12 @@ public class RxKeyboard: NSObject {
 
   fileprivate let disposeBag = DisposeBag()
   fileprivate let panRecognizer = UIPanGestureRecognizer()
+
+  fileprivate let application: UIApplication? = {
+    let selector = NSSelectorFromString("sharedApplication")
+    return UIApplication.perform(selector)?.takeRetainedValue() as? UIApplication
+  }()
+  fileprivate var _gestureView: UIView?
 
 
   // MARK: Initializing
@@ -93,10 +110,10 @@ public class RxKeyboard: NSObject {
       .withLatestFrom(frameVariable.asObservable()) { ($0, $1) }
       .flatMap { (gestureRecognizer, frame) -> Observable<CGRect> in
         guard case .changed = gestureRecognizer.state,
-          let window = UIApplication.shared.windows.first,
+          let view = gestureRecognizer.view,
           frame.origin.y < UIScreen.main.bounds.height
         else { return .empty() }
-        let origin = gestureRecognizer.location(in: window)
+        let origin = gestureRecognizer.location(in: view)
         var newFrame = frame
         newFrame.origin.y = max(origin.y, UIScreen.main.bounds.height - frame.height)
         return .just(newFrame)
@@ -112,8 +129,9 @@ public class RxKeyboard: NSObject {
     NotificationCenter.default.rx.notification(.UIApplicationDidFinishLaunching)
       .map { _ in Void() }
       .startWith(Void()) // when RxKeyboard is initialized before UIApplication.window is created
-      .subscribe(onNext: { _ in
-        UIApplication.shared.windows.first?.addGestureRecognizer(self.panRecognizer)
+      .subscribe(onNext: { [weak self] _ in
+        guard let `self` = self else { return }
+        self.gestureView?.addGestureRecognizer(self.panRecognizer)
       })
       .disposed(by: self.disposeBag)
   }
