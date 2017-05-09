@@ -106,13 +106,13 @@ RxKeyboard.instance.frame
 - **Using [CocoaPods](https://cocoapods.org)**:
 
     ```ruby
-    pod 'RxKeyboard', '~> 0.4'
+    pod 'RxKeyboard'
     ```
 
 - **Using [Carthage](https://github.com/Carthage/Carthage)**:
 
     ```
-    github "devxoul/RxKeyboard" ~> 0.4
+    github "devxoul/RxKeyboard"
     ```
 
 ## License
