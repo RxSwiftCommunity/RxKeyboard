@@ -26,16 +26,20 @@ public class RxKeyboard: NSObject {
   /// or `0` if the keyboard is not visible.
   public let visibleHeight: Driver<CGFloat>
 
+  public var isPanAvailable = true {
+    didSet {
+      panRecognizer.delegate = isPanAvailable ? self : nil
+    }
+  }
+
   /// Same with `visibleHeight` but only emits values when keyboard is about to show. This is
   /// useful when adjusting scroll view content offset.
   public let willShowVisibleHeight: Driver<CGFloat>
-
 
   // MARK: Private
 
   fileprivate let disposeBag = DisposeBag()
   fileprivate let panRecognizer = UIPanGestureRecognizer()
-
 
   // MARK: Initializing
 
@@ -58,12 +62,14 @@ public class RxKeyboard: NSObject {
 
     super.init()
 
+    let transformNotification = { (notification: Notification) -> CGRect in
+      let rectValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue
+      return rectValue?.cgRectValue ?? defaultFrame
+      }
+
     // keyboard will change frame
     let willChangeFrame = NotificationCenter.default.rx.notification(.UIKeyboardWillChangeFrame)
-      .map { notification -> CGRect in
-        let rectValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue
-        return rectValue?.cgRectValue ?? defaultFrame
-      }
+      .map(transformNotification)
       .map { frame -> CGRect in
         if frame.origin.y < 0 { // if went to wrong frame
           var newFrame = frame
@@ -75,10 +81,7 @@ public class RxKeyboard: NSObject {
 
     // keyboard will hide
     let willHide = NotificationCenter.default.rx.notification(.UIKeyboardWillHide)
-      .map { notification -> CGRect in
-        let rectValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue
-        return rectValue?.cgRectValue ?? defaultFrame
-      }
+      .map(transformNotification)
       .map { frame -> CGRect in
         if frame.origin.y < 0 { // if went to wrong frame
           var newFrame = frame
@@ -90,6 +93,7 @@ public class RxKeyboard: NSObject {
 
     // pan gesture
     let didPan = self.panRecognizer.rx.event
+      .skipWhile { $0.delegate == nil }
       .withLatestFrom(frameVariable.asObservable()) { ($0, $1) }
       .flatMap { (gestureRecognizer, frame) -> Observable<CGRect> in
         guard case .changed = gestureRecognizer.state,
