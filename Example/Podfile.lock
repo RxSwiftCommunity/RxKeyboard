@@ -2,12 +2,12 @@ PODS:
   - CGFloatLiteral (0.2.0)
   - ManualLayout (1.3.0)
   - ReusableKit (1.1.0)
-  - RxCocoa (3.1.0):
-    - RxSwift (~> 3.1)
-  - RxKeyboard (0.4.0):
-    - RxCocoa (>= 3.0)
-    - RxSwift (>= 3.0)
-  - RxSwift (3.1.0)
+  - RxCocoa (3.5.0):
+    - RxSwift (~> 3.4)
+  - RxKeyboard (0.5.0):
+    - RxCocoa (>= 3.4)
+    - RxSwift (>= 3.4)
+  - RxSwift (3.5.0)
   - SnapKit (3.1.2)
   - SwiftyColor (1.0.0)
   - SwiftyImage (1.0.0)
@@ -33,9 +33,9 @@ SPEC CHECKSUMS:
   CGFloatLiteral: 5bdcd81cb54b56cd71c4e5e66a33cb86cd51ecbf
   ManualLayout: 68ac8cfa6b5f656f7a9fadec3730208b95986880
   ReusableKit: 89e743a120bab0d95848bff27e481833c2768905
-  RxCocoa: 50d7564866da9299161e86a263ce12a0873904d8
-  RxKeyboard: cf7f4463f27e580a3542127877ef9e3a71183744
-  RxSwift: 83ff553e7593fdfdcb2562933a64c0284dffdadc
+  RxCocoa: a0a09f45d0e5b48ecb6a4a7b4b4c89c88d3f633f
+  RxKeyboard: b360a494f44777cd03f2c09251c50456683ec702
+  RxSwift: 18ee9d78b45edb3b0b7e79916b47a116e6dbc842
   SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
   SwiftyColor: 7fa09db14051bc5d7f539e1c4576665975225992
   SwiftyImage: 79090f8b96057b3e91064de172936b97855086e6
