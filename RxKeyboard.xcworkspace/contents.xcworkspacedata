@@ -7,7 +7,14 @@
    <FileRef
       location = "group:Example/RxKeyboardExample.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:Example/Pods/Pods.xcodeproj">
-   </FileRef>
+   <Group
+      location = "container:"
+      name = "Dependencies">
+      <FileRef
+         location = "group:Carthage/Checkouts/RxSwift/Rx.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:Example/Pods/Pods.xcodeproj">
+      </FileRef>
+   </Group>
 </Workspace>
