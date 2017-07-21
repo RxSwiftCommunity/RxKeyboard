@@ -58,7 +58,7 @@ public class RxKeyboard: NSObject {
       }
       .filter { state in state.isShowing }
       .map { state in state.visibleHeight }
-    self.didChangeVisibility = self.visibleHeight.map({ $0 != 0.0 })
+    self.didChangeVisibility = self.visibleHeight.map({ $0 != 0.0 }).distinctUntilChanged()
     super.init()
 
     // keyboard will change frame
