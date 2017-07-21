@@ -32,7 +32,7 @@ public class RxKeyboard: NSObject {
   
   /// An observable visibility of keyboard. Emits keyboard visibility
   /// when changed keyboard show and hide.
-  public let didChangeVisibility: Driver<Bool>
+  public let isHidden: Driver<Bool>
 
   // MARK: Private
 
@@ -58,7 +58,7 @@ public class RxKeyboard: NSObject {
       }
       .filter { state in state.isShowing }
       .map { state in state.visibleHeight }
-    self.didChangeVisibility = self.visibleHeight.map({ $0 != 0.0 }).distinctUntilChanged()
+    self.isHidden = self.visibleHeight.map({ $0 == 0.0 }).distinctUntilChanged()
     super.init()
 
     // keyboard will change frame
