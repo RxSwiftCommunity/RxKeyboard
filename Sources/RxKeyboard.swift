@@ -29,7 +29,10 @@ public class RxKeyboard: NSObject {
   /// Same with `visibleHeight` but only emits values when keyboard is about to show. This is
   /// useful when adjusting scroll view content offset.
   public let willShowVisibleHeight: Driver<CGFloat>
-
+  
+  /// An observable visibility of keyboard. Emits keyboard visibility
+  /// when changed keyboard show and hide.
+  public let didChangeVisibility: Driver<Bool>
 
   // MARK: Private
 
@@ -55,7 +58,7 @@ public class RxKeyboard: NSObject {
       }
       .filter { state in state.isShowing }
       .map { state in state.visibleHeight }
-
+    self.didChangeVisibility = self.visibleHeight.map({ $0 != 0.0 })
     super.init()
 
     // keyboard will change frame
