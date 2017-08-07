@@ -58,6 +58,7 @@ public class RxKeyboard: NSObject {
       }
       .filter { state in state.isShowing }
       .map { state in state.visibleHeight }
+      .skip(1)
     self.isHidden = self.visibleHeight.map({ $0 == 0.0 }).distinctUntilChanged()
     super.init()
 
