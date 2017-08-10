@@ -6,5 +6,5 @@
 *.mode1v3
 
 Pods/
-Carthage/
+Carthage/Build
 vendor/
