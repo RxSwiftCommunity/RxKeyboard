@@ -112,7 +112,7 @@ RxKeyboard.instance.frame
 - **Using [Carthage](https://github.com/Carthage/Carthage)**:
 
     ```
-    github "devxoul/RxKeyboard"
+    github "RxSwiftCommunity/RxKeyboard"
     ```
 
 ## License
