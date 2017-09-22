@@ -101,6 +101,12 @@ RxKeyboard.instance.frame
 - Swift 4
 - iOS 8+
 
+## Contributing
+
+```console
+$ swift package generate-xcodeproj
+```
+
 ## Installation
 
 - **Using [CocoaPods](https://cocoapods.org)**:
