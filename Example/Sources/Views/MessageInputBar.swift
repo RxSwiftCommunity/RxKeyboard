@@ -72,14 +72,14 @@ final class MessageInputBar: UIView {
           return
         }
 
-        var bottomMargin = 0.f
-        if #available(iOS 11.0, *), !visible, let bottomInset = self.superview?.safeAreaInsets.bottom {
-          bottomMargin = bottomInset
+        var bottomInset = 0.f
+        if #available(iOS 11.0, *), !visible, let bottom = self.superview?.safeAreaInsets.bottom {
+          bottomInset = bottom
         }
 
         self.toolbar.snp.remakeConstraints({ (make) in
           make.left.right.top.equalTo(0)
-          make.bottom.equalTo(bottomMargin)
+          make.bottom.equalTo(bottomInset)
         })
       })
       .disposed(by: self.disposeBag)
