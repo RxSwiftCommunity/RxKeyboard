@@ -6,6 +6,7 @@
 //  Copyright © 2016 Suyeol Jeon. All rights reserved.
 //
 
+#if os(iOS) || os(tvOS)
 import UIKit
 
 import RxCocoa
@@ -153,3 +154,5 @@ extension RxKeyboard: UIGestureRecognizerDelegate {
   }
 
 }
+#endif
+

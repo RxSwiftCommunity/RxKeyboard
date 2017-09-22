@@ -11,6 +11,6 @@ let package = Package(
     .package(url: "https://github.com/ReactiveX/RxSwift.git", .branch("rxswift4.0-swift4.0")),
   ],
   targets: [
-    .target(name: "RxKeyboard", dependencies: ["RxSwift"]),
+    .target(name: "RxKeyboard", dependencies: ["RxSwift", "RxCocoa"]),
   ]
 )
