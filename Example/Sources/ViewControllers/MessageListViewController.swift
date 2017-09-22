@@ -92,8 +92,13 @@ class MessageListViewController: UIViewController {
     RxKeyboard.instance.visibleHeight
       .drive(onNext: { [weak self] keyboardVisibleHeight in
         guard let `self` = self, self.didSetupViewConstraints else { return }
+        var actualKeyboardHeight = keyboardVisibleHeight
+        if #available(iOS 11.0, *), keyboardVisibleHeight > 0 {
+          actualKeyboardHeight = actualKeyboardHeight - self.view.safeAreaInsets.bottom
+        }
+        
         self.messageInputBar.snp.updateConstraints { make in
-          make.bottom.equalTo(self.bottomLayoutGuide.snp.top).offset(-keyboardVisibleHeight)
+          make.bottom.equalTo(self.bottomLayoutGuide.snp.top).offset(-actualKeyboardHeight)
         }
         self.view.setNeedsLayout()
         UIView.animate(withDuration: 0) {
