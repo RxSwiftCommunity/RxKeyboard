@@ -95,7 +95,7 @@ final class MessageCell: UICollectionViewCell {
     let labelWidth = Metric.maximumBalloonWidth - Metric.balloonViewInset * 2
     let constraintSize = CGSize(width: labelWidth, height: CGFloat.greatestFiniteMagnitude)
     let options: NSStringDrawingOptions = [.usesLineFragmentOrigin, .usesFontLeading]
-    let attributes: [String: Any] = [NSFontAttributeName: Font.label]
+    let attributes: [NSAttributedStringKey: Any] = [.font: Font.label]
     let rect = message.text.boundingRect(with: constraintSize, options: options, attributes: attributes, context: nil)
     let labelHeight = ceil(rect.height)
     return CGSize(width: width, height: labelHeight + Metric.balloonViewInset * 2)
