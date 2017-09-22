@@ -10,6 +10,7 @@ import UIKit
 
 import RxCocoa
 import RxSwift
+import RxKeyboard
 
 final class MessageInputBar: UIView {
 
@@ -63,8 +64,40 @@ final class MessageInputBar: UIView {
       .map { text in text?.isEmpty == false }
       .bind(to: self.sendButton.rx.isEnabled)
       .disposed(by: self.disposeBag)
+    
+    RxKeyboard.instance.visibleHeight
+      .map { $0 > 0 }
+      .distinctUntilChanged().drive(onNext: { [weak self] (visible) in
+        guard let `self` = self else {
+          return
+        }
+
+        var bottomMargin = 0.f
+        if #available(iOS 11.0, *), !visible, let bottomInset = self.superview?.safeAreaInsets.bottom {
+          bottomMargin = bottomInset
+        }
+
+        self.toolbar.snp.remakeConstraints({ (make) in
+          make.left.right.top.equalTo(0)
+          make.bottom.equalTo(bottomMargin)
+        })
+      })
+      .disposed(by: self.disposeBag)
   }
-  
+    
+    @available(iOS 11.0, *)
+    override func safeAreaInsetsDidChange() {
+      super.safeAreaInsetsDidChange()
+      guard let bottomInset = self.superview?.safeAreaInsets.bottom else {
+        return
+      }
+    
+      self.toolbar.snp.remakeConstraints { make in
+        make.top.left.right.equalTo(0)
+        make.bottom.equalTo(bottomInset)
+      }
+    }
+    
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
