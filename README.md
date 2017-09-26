@@ -72,7 +72,7 @@ RxKeyboard.instance.frame
     ```swift
     RxKeyboard.instance.visibleHeight
       .drive(onNext: { keyboardVisibleHeight in
-        toolbar.frame.origin.y = self.view.height - toolbar.frame.height - keyboardVisibleHeight
+        toolbar.frame.origin.y = self.view.frame.height - toolbar.frame.height - keyboardVisibleHeight
       })
       .disposed(by: disposeBag)
     ```
