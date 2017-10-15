@@ -1,20 +1,20 @@
 PODS:
   - CGFloatLiteral (0.4.0)
   - ManualLayout (1.3.0)
-  - ReusableKit (1.3.0):
-    - ReusableKit/Core (= 1.3.0)
-    - ReusableKit/RxSwift (= 1.3.0)
-  - ReusableKit/Core (1.3.0)
-  - ReusableKit/RxSwift (1.3.0):
+  - ReusableKit (2.0.0):
+    - ReusableKit/Core (= 2.0.0)
+    - ReusableKit/RxSwift (= 2.0.0)
+  - ReusableKit/Core (2.0.0)
+  - ReusableKit/RxSwift (2.0.0):
     - ReusableKit/Core
-    - RxCocoa (>= 3.4)
-    - RxSwift (>= 3.4)
-  - RxCocoa (4.0.0-beta.0):
-    - RxSwift (~> 4.0.0-beta.0)
+    - RxCocoa (>= 4.0.0-beta.0)
+    - RxSwift (>= 4.0.0-beta.0)
+  - RxCocoa (4.0.0):
+    - RxSwift (~> 4.0)
   - RxKeyboard (0.7.0):
-    - RxCocoa (~> 4.0.0-beta.0)
-    - RxSwift (~> 4.0.0-beta.0)
-  - RxSwift (4.0.0-beta.0)
+    - RxCocoa (>= 4.0.0)
+    - RxSwift (>= 4.0.0)
+  - RxSwift (4.0.0)
   - SnapKit (4.0.0)
   - SwiftyColor (1.0.0)
   - SwiftyImage (1.2.0)
@@ -39,10 +39,10 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   CGFloatLiteral: 2ab558b74124b584dd023a35b7e41795a61d8140
   ManualLayout: 68ac8cfa6b5f656f7a9fadec3730208b95986880
-  ReusableKit: 4e4f45128985987555bde17abbf261c0a604f9f2
-  RxCocoa: 8d809675f4e89c5c4c5a6900bbd11fe632ad5d86
-  RxKeyboard: 4167b1f005745a4178c3ac4adfc8177482b87675
-  RxSwift: e0899fae37065c16db976cc5e3c957e4e388869c
+  ReusableKit: 668daa3e98e614ec2e135db2028a958baa2abd6f
+  RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
+  RxKeyboard: 601ae66f81338432a1fa711a04605f3df2a650f6
+  RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftyColor: 7fa09db14051bc5d7f539e1c4576665975225992
   SwiftyImage: ebaa7c7b6163cd4ad102f3bb05a8fb276d35b4f3
