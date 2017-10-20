@@ -5,7 +5,7 @@ docs/
 /Packages
 /*.xcodeproj
 **/xcuserdata
-**/xcshareddata
+i#**/xcshareddata
 Pods/
 Examples/**/Podfile.lock
 Carthage/Build
