@@ -5,7 +5,6 @@ docs/
 /Packages
 /*.xcodeproj
 **/xcuserdata
-**/xcshareddata
 Pods/
-Carthage/
 Examples/**/Podfile.lock
+Carthage/Build
