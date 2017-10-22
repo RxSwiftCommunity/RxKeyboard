@@ -15,6 +15,7 @@ env:
 install:
   - eval "$(curl -sL https://gist.githubusercontent.com/kylef/5c0475ff02b7c7671d2a/raw/9f442512a46d7a2af7b850d65a7e9bd31edfb09b/swiftenv-install.sh)"
   - swift --version
+  - bundle install
 
 before_script:
   - set -o pipefail
@@ -42,11 +43,13 @@ script:
   - bundle exec pod lib lint --verbose --allow-warnings --fail-fast
 
 before_deploy:
-  - ruby ./scripts/carthage_helper.rb prepare_xcconfig
-  - swift package generate-xcodeproj --xcconfig-overrides Config.xcconfig
-  - ruby ./scripts/carthage_helper.rb remove_unnecessary_frameworks
-  - carthage build --no-skip-current
-  - ruby ./scripts/carthage_helper.rb modify_info
+  - bundle exec swiftproj generate-xcconfig --podspec RxKeyboard.podspec
+  - bundle exec swiftproj generate-xcodeproj --xcconfig-overrides Config.xcconfig
+  - bundle exec swiftproj configure-scheme --project RxKeyboard.xcodeproj --scheme RxKeyboard-Package --buildable-targets RxKeyboard
+  - bundle exec swiftproj remove-framework --project RxKeyboard.xcodeproj --target RxKeyboard --framework RxCocoa.framework
+  - bundle exec swiftproj remove-framework --project RxKeyboard.xcodeproj --target RxKeyboard --framework RxCocoaRuntime.framework
+  - carthage bootstrap
+  - carthage build --no-skip-current --verbose | xcpretty -c
   - carthage archive RxKeyboard
 
 deploy:
