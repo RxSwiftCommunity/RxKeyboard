@@ -40,6 +40,7 @@ script:
         -configuration Debug
         CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -c;
     fi
+  - bundle exec pod repo update
   - bundle exec pod lib lint --verbose --allow-warnings --fail-fast
 
 before_deploy:
