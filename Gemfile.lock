@@ -53,6 +53,9 @@ GEM
     nap (1.1.0)
     netrc (0.7.8)
     ruby-macho (1.1.0)
+    swiftproj (0.1.0)
+      colored2 (>= 3.0)
+      xcodeproj (>= 1.5)
     thread_safe (0.3.6)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
@@ -67,6 +70,7 @@ PLATFORMS
 
 DEPENDENCIES
   cocoapods (~> 1.1)
+  swiftproj
 
 RUBY VERSION
    ruby 2.3.1p112
