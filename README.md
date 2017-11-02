@@ -103,6 +103,8 @@ RxKeyboard.instance.frame
 
 ## Contributing
 
+In development, RxKeyboard manages dependencies with Swift Package Manager. Use the command below in order to generate a Xcode project file. Note that `.xcodeproj` file changes are not tracked via git.
+
 ```console
 $ swift package generate-xcodeproj
 ```
@@ -120,6 +122,11 @@ $ swift package generate-xcodeproj
     ```
     github "RxSwiftCommunity/RxKeyboard"
     ```
+
+    ⚠️ With Carthage, RxKeyboard only supports:
+
+    * Xcode 9.1 (9B55)
+    * Swift 4.0.2 (swiftlang-900.0.69.2 clang-900.0.38)
 
 ## License
 
