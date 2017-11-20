@@ -120,13 +120,17 @@ $ swift package generate-xcodeproj
 - **Using [Carthage](https://github.com/Carthage/Carthage)**:
 
     ```
-    github "RxSwiftCommunity/RxKeyboard"
+    binary "https://raw.githubusercontent.com/RxSwiftCommunity/RxKeyboard/master/Carthage.json"
     ```
 
-    ⚠️ With Carthage, RxKeyboard only supports:
+    ⚠️ With Carthage, RxKeyboard only supports binary installation:
 
-    * Xcode 9.1 (9B55)
-    * Swift 4.0.2 (swiftlang-900.0.69.2 clang-900.0.38)
+    * 0.7.1
+        * Xcode 9.1 (9B55)
+        * Swift 4.0.2 (swiftlang-900.0.69.2 clang-900.0.38)
+    * 0.7.0
+        * 9.0.1 (9A1004)
+        * Swift 4.0 (swiftlang-900.0.65.2 clang-900.0.37)
 
 ## License
 
