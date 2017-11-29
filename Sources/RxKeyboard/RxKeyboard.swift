@@ -12,8 +12,15 @@ import UIKit
 import RxCocoa
 import RxSwift
 
+public protocol RxKeyboardType {
+  var frame: Driver<CGRect> { get }
+  var visibleHeight: Driver<CGFloat> { get }
+  var willShowVisibleHeight: Driver<CGFloat> { get }
+  var isHidden: Driver<Bool> { get }
+}
+
 /// RxKeyboard provides a reactive way of observing keyboard frame changes.
-public class RxKeyboard: NSObject {
+public class RxKeyboard: NSObject, RxKeyboardType {
 
   // MARK: Public
 
