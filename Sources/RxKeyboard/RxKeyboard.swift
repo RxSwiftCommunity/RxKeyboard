@@ -62,11 +62,10 @@ public class RxKeyboard: NSObject, RxKeyboardType {
     self.visibleHeight = self.frame.map { UIScreen.main.bounds.height - $0.origin.y }
     self.willShowVisibleHeight = self.visibleHeight
       .scan((visibleHeight: 0, isShowing: false)) { lastState, newVisibleHeight in
-        return (visibleHeight: newVisibleHeight, isShowing: lastState.visibleHeight == 0)
+        return (visibleHeight: newVisibleHeight, isShowing: lastState.visibleHeight == 0 && newVisibleHeight > 0)
       }
       .filter { state in state.isShowing }
       .map { state in state.visibleHeight }
-      .skip(1)
     self.isHidden = self.visibleHeight.map({ $0 == 0.0 }).distinctUntilChanged()
     super.init()
 
