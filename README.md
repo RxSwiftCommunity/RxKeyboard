@@ -60,7 +60,7 @@ RxKeyboard.instance.frame
     ```swift
     RxKeyboard.instance.willShowVisibleHeight
       .drive(onNext: { keyboardVisibleHeight in
-        scrollView.contentInset.offset.y += keyboardVisibleHeight
+        scrollView.contentOffset.y += keyboardVisibleHeight
       })
       .disposed(by: disposeBag)
     ```
