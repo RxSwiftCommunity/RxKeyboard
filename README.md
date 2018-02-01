@@ -120,7 +120,7 @@ $ swift package generate-xcodeproj
 - **Using [Carthage](https://github.com/Carthage/Carthage)**:
 
     ```
-    binary "https://raw.githubusercontent.com/RxSwiftCommunity/RxKeyboard/master/Carthage.json"
+    binary "https://raw.githubusercontent.com/RxSwiftCommunity/RxKeyboard/master/RxKeyboard.json"
     ```
 
     ⚠️ With Carthage, RxKeyboard only supports binary installation:
