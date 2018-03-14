@@ -57,7 +57,7 @@ public class RxKeyboard: NSObject, RxKeyboardType {
       width: UIScreen.main.bounds.width,
       height: 0
     )
-    let frameVariable = Variable<CGRect>(defaultFrame)
+    let frameVariable = BehaviorRelay<CGRect>(value: defaultFrame)
     self.frame = frameVariable.asDriver().distinctUntilChanged()
     self.visibleHeight = self.frame.map { UIScreen.main.bounds.height - $0.origin.y }
     self.willShowVisibleHeight = self.visibleHeight
@@ -115,8 +115,10 @@ public class RxKeyboard: NSObject, RxKeyboardType {
 
     // merge into single sequence
     Observable.of(didPan, willChangeFrame, willHide).merge()
-      .bind(to: frameVariable)
-      .disposed(by: self.disposeBag)
+        .subscribe(onNext: { [weak frameVariable] frame in
+            frameVariable?.accept(frame)
+        })
+        .disposed(by: self.disposeBag)
 
     // gesture recognizer
     self.panRecognizer.delegate = self
