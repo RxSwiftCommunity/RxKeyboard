@@ -93,8 +93,8 @@ RxKeyboard.instance.frame
     
 ## Dependencies
 
-- [RxSwift](https://github.com/ReactiveX/RxSwift) (~> 4.1.2)
-- [RxCocoa](https://github.com/ReactiveX/RxSwift) (~> 4.1.2)
+- [RxSwift](https://github.com/ReactiveX/RxSwift) (>= 4.0.0)
+- [RxCocoa](https://github.com/ReactiveX/RxSwift) (>= 4.0.0)
 
 ## Requirements
 
