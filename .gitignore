@@ -11,3 +11,4 @@ Carthage/
 Examples/**/Podfile.lock
 *.xcconfig
 *.framework.zip
+.idea/
