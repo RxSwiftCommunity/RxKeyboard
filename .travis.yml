@@ -5,9 +5,9 @@ env:
   global:
     - PROJECT="RxKeyboard.xcodeproj"
     - SCHEME="RxKeyboard-Package"
-    - IOS_SDK="iphonesimulator11.2"
+    - IOS_SDK="iphonesimulator11.3"
     - MACOS_SDK="macosx10.13"
-    - TVOS_SDK="appletvsimulator11.2"
+    - TVOS_SDK="appletvsimulator11.3"
     - WATCHOS_SDK="watchsimulator4.0"
     - FRAMEWORK="RxKeyboard"
   matrix:
