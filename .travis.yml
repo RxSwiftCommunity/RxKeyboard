@@ -5,13 +5,13 @@ env:
   global:
     - PROJECT="RxKeyboard.xcodeproj"
     - SCHEME="RxKeyboard-Package"
-    - IOS_SDK="iphonesimulator11.2"
+    - IOS_SDK="iphonesimulator11.3"
     - MACOS_SDK="macosx10.13"
-    - TVOS_SDK="appletvsimulator11.2"
+    - TVOS_SDK="appletvsimulator11.3"
     - WATCHOS_SDK="watchsimulator4.0"
     - FRAMEWORK="RxKeyboard"
   matrix:
-    - SDK="$IOS_SDK"      TEST=0  DESTINATION="platform=iOS Simulator,name=iPhone 8,OS=11.2"
+    - SDK="$IOS_SDK"      TEST=0  DESTINATION="platform=iOS Simulator,name=iPhone 8,OS=11.3"
 
 install:
   - eval "$(curl -sL https://gist.githubusercontent.com/kylef/5c0475ff02b7c7671d2a/raw/9f442512a46d7a2af7b850d65a7e9bd31edfb09b/swiftenv-install.sh)"
