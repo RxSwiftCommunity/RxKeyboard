@@ -44,8 +44,8 @@ public class RxKeyboard: NSObject, RxKeyboardType {
 
   // MARK: Private
 
-  fileprivate let disposeBag = DisposeBag()
-  fileprivate let panRecognizer = UIPanGestureRecognizer()
+  private let disposeBag = DisposeBag()
+  private let panRecognizer = UIPanGestureRecognizer()
 
 
   // MARK: Initializing
