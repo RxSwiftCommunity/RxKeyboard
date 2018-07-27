@@ -42,10 +42,10 @@ public class RxKeyboard: NSObject, RxKeyboardType {
   /// when changed keyboard show and hide.
   public let isHidden: Driver<Bool>
 
-  // MARK: Private
+  public let panRecognizer = UIPanGestureRecognizer()
 
+  // MARK: Private
   private let disposeBag = DisposeBag()
-  private let panRecognizer = UIPanGestureRecognizer()
 
 
   // MARK: Initializing
