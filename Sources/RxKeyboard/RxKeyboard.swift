@@ -44,20 +44,20 @@ public class RxKeyboard: NSObject, RxKeyboardType {
 
   // MARK: Private
 
+  private let frameVariable = BehaviorRelay<CGRect>(value: CGRect(
+          x: 0,
+    y: UIScreen.main.bounds.height,
+    width: UIScreen.main.bounds.width,
+    height: 0
+  ))
   private let disposeBag = DisposeBag()
+  private var keyboardChangeDisposeBag = DisposeBag()
   private let panRecognizer = UIPanGestureRecognizer()
 
 
   // MARK: Initializing
 
   override init() {
-    let defaultFrame = CGRect(
-      x: 0,
-      y: UIScreen.main.bounds.height,
-      width: UIScreen.main.bounds.width,
-      height: 0
-    )
-    let frameVariable = BehaviorRelay<CGRect>(value: defaultFrame)
     self.frame = frameVariable.asDriver().distinctUntilChanged()
     self.visibleHeight = self.frame.map { UIScreen.main.bounds.height - $0.origin.y }
     self.willShowVisibleHeight = self.visibleHeight
@@ -68,6 +68,41 @@ public class RxKeyboard: NSObject, RxKeyboardType {
       .map { state in state.visibleHeight }
     self.isHidden = self.visibleHeight.map({ $0 == 0.0 }).distinctUntilChanged()
     super.init()
+
+    bindChanges()
+
+    // gesture recognizer
+    self.panRecognizer.delegate = self
+    NotificationCenter.default.rx.notification(.UIApplicationDidFinishLaunching)
+      .map { _ in Void() }
+      .startWith(Void()) // when RxKeyboard is initialized before UIApplication.window is created
+      .subscribe(onNext: { _ in
+        UIApplication.shared.windows.first?.addGestureRecognizer(self.panRecognizer)
+      })
+      .disposed(by: self.disposeBag)
+
+    NotificationCenter.default.rx.notification(.UIApplicationWillResignActive)
+      .map { _ in Void() }
+      .subscribe(onNext: { [weak self] _ in
+        self?.keyboardChangeDisposeBag = DisposeBag()
+      })
+      .disposed(by: self.disposeBag)
+
+    NotificationCenter.default.rx.notification(.UIApplicationDidBecomeActive)
+      .map { _ in Void() }
+      .subscribe(onNext: { [weak self] _ in
+        self?.bindChanges()
+      })
+      .disposed(by: self.disposeBag)
+  }
+
+  private func bindChanges() {
+    let defaultFrame = CGRect(
+      x: 0,
+      y: UIScreen.main.bounds.height,
+      width: UIScreen.main.bounds.width,
+      height: 0
+    )
 
     // keyboard will change frame
     let willChangeFrame = NotificationCenter.default.rx.notification(.UIKeyboardWillChangeFrame)
@@ -116,17 +151,7 @@ public class RxKeyboard: NSObject, RxKeyboardType {
     // merge into single sequence
     Observable.of(didPan, willChangeFrame, willHide).merge()
       .bind(to: frameVariable)
-      .disposed(by: self.disposeBag)
-
-    // gesture recognizer
-    self.panRecognizer.delegate = self
-    NotificationCenter.default.rx.notification(.UIApplicationDidFinishLaunching)
-      .map { _ in Void() }
-      .startWith(Void()) // when RxKeyboard is initialized before UIApplication.window is created
-      .subscribe(onNext: { _ in
-        UIApplication.shared.windows.first?.addGestureRecognizer(self.panRecognizer)
-      })
-      .disposed(by: self.disposeBag)
+      .disposed(by: keyboardChangeDisposeBag)
   }
 
 }
