@@ -9,6 +9,7 @@ docs/
 Pods/
 Carthage/Build
 Carthage/Checkouts
+!Carthage/RxKeyboard/
 Examples/**/Podfile.lock
 *.xcconfig
 *.framework.zip
