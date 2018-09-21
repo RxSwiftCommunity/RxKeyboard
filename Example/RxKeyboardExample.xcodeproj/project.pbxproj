@@ -21,7 +21,7 @@
 /* Begin PBXFileReference section */
 		032ABB7B1E35A9F200A3A5D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		032ABB7D1E35A9F200A3A5D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		032ABB7F1E35A9F200A3A5D4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		032ABB7F1E35A9F200A3A5D4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
 		032ABB811E35A9F200A3A5D4 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		032ABB821E35A9F200A3A5D4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		032ABB841E35A9F200A3A5D4 /* MessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +149,7 @@
 				03E8A71B1E35A95B00F7A3EC /* Frameworks */,
 				03E8A71C1E35A95B00F7A3EC /* Resources */,
 				E857CEA8F03D723AC93BD7A1 /* [CP] Embed Pods Frameworks */,
+				2D555D8C90E50248DB41694D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -206,6 +207,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2D555D8C90E50248DB41694D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxKeyboardExample/Pods-RxKeyboardExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D103E37D22DD7DDCE369FBBB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -410,6 +426,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.xoul.RxKeyboardExample;
 				PRODUCT_NAME = RxKeyboardRxKeyboardExample;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -422,6 +439,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.xoul.RxKeyboardExample;
 				PRODUCT_NAME = RxKeyboardRxKeyboardExample;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
