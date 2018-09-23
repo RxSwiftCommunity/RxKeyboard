@@ -20,9 +20,15 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
+  #if swift(>=4.2)
+    typealias ApplicationLaunchOptionsKey = UIApplication.LaunchOptionsKey
+  #else
+    typealias ApplicationLaunchOptionsKey = UIApplicationLaunchOptionsKey
+  #endif
+
   func application(
     _ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?
+    didFinishLaunchingWithOptions launchOptions: [ApplicationLaunchOptionsKey: Any]?
   ) -> Bool {
     let window = UIWindow(frame: UIScreen.main.bounds)
     window.backgroundColor = .white

@@ -47,10 +47,21 @@ public class RxKeyboard: NSObject, RxKeyboardType {
   private let disposeBag = DisposeBag()
   private let panRecognizer = UIPanGestureRecognizer()
 
-
   // MARK: Initializing
 
   override init() {
+    #if swift(>=4.2)
+      let keyboardWillChangeFrame = UIResponder.keyboardWillChangeFrameNotification
+      let keyboardWillHide = UIResponder.keyboardWillHideNotification
+      let keyboardFrameEndKey = UIResponder.keyboardFrameEndUserInfoKey
+      let applicationDidFinishLaunching = UIApplication.didFinishLaunchingNotification
+    #else
+      let keyboardWillChangeFrame = NSNotification.Name.UIKeyboardWillChangeFrame
+      let keyboardWillHide = NSNotification.Name.UIKeyboardWillHide
+      let keyboardFrameEndKey = UIKeyboardFrameEndUserInfoKey
+      let applicationDidFinishLaunching = NSNotification.Name.UIApplicationDidFinishLaunching
+    #endif
+
     let defaultFrame = CGRect(
       x: 0,
       y: UIScreen.main.bounds.height,
@@ -70,9 +81,9 @@ public class RxKeyboard: NSObject, RxKeyboardType {
     super.init()
 
     // keyboard will change frame
-    let willChangeFrame = NotificationCenter.default.rx.notification(.UIKeyboardWillChangeFrame)
+    let willChangeFrame = NotificationCenter.default.rx.notification(keyboardWillChangeFrame)
       .map { notification -> CGRect in
-        let rectValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue
+        let rectValue = notification.userInfo?[keyboardFrameEndKey] as? NSValue
         return rectValue?.cgRectValue ?? defaultFrame
       }
       .map { frame -> CGRect in
@@ -85,9 +96,9 @@ public class RxKeyboard: NSObject, RxKeyboardType {
       }
 
     // keyboard will hide
-    let willHide = NotificationCenter.default.rx.notification(.UIKeyboardWillHide)
+    let willHide = NotificationCenter.default.rx.notification(keyboardWillHide)
       .map { notification -> CGRect in
-        let rectValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue
+        let rectValue = notification.userInfo?[keyboardFrameEndKey] as? NSValue
         return rectValue?.cgRectValue ?? defaultFrame
       }
       .map { frame -> CGRect in
@@ -120,7 +131,7 @@ public class RxKeyboard: NSObject, RxKeyboardType {
 
     // gesture recognizer
     self.panRecognizer.delegate = self
-    NotificationCenter.default.rx.notification(.UIApplicationDidFinishLaunching)
+    NotificationCenter.default.rx.notification(applicationDidFinishLaunching)
       .map { _ in Void() }
       .startWith(Void()) // when RxKeyboard is initialized before UIApplication.window is created
       .subscribe(onNext: { _ in

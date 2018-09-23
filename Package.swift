@@ -1,4 +1,4 @@
-// swift-tools-version:4.1
+// swift-tools-version:4.0
 
 import PackageDescription
 
@@ -8,7 +8,7 @@ let package = Package(
     .library(name: "RxKeyboard", targets: ["RxKeyboard"]),
   ],
   dependencies: [
-    .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "4.1.0")),
+    .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "4.3.0")),
   ],
   targets: [
     .target(name: "RxKeyboard", dependencies: ["RxSwift", "RxCocoa"]),
