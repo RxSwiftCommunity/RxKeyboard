@@ -125,6 +125,9 @@ $ swift package generate-xcodeproj
 
     ⚠️ With Carthage, RxKeyboard only supports binary installation:
     
+    * 0.9.0
+        * Xcode 10 (10A255)
+        * Swift 4.2 (swiftlang-1000.11.37.1 clang-1000.11.45.1)
     * 0.8.2
         * Xcode 9.3 (9E145)
         * Swift 4.1.0 (swiftlang-902.0.48 clang-902.0.37.1)
