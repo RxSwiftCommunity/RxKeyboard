@@ -95,6 +95,7 @@ RxKeyboard.instance.frame
 
 - [RxSwift](https://github.com/ReactiveX/RxSwift) (>= 4.4.0)
 - [RxCocoa](https://github.com/ReactiveX/RxSwift) (>= 4.4.0)
+- [RxAtomic](https://github.com/ReactiveX/RxSwift) (>= 4.4.0)
 
 ## Requirements
 
