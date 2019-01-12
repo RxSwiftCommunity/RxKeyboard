@@ -1,6 +1,6 @@
 # RxKeyboard
 
-![Swift](https://img.shields.io/badge/Swift-4.1-orange.svg)
+![Swift](https://img.shields.io/badge/Swift-4.2-orange.svg)
 [![CocoaPods](http://img.shields.io/cocoapods/v/RxKeyboard.svg)](https://cocoapods.org/pods/RxKeyboard)
 [![Build Status](https://travis-ci.org/RxSwiftCommunity/RxKeyboard.svg?branch=master)](https://travis-ci.org/RxSwiftCommunity/RxKeyboard)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
@@ -93,8 +93,8 @@ RxKeyboard.instance.frame
     
 ## Dependencies
 
-- [RxSwift](https://github.com/ReactiveX/RxSwift) (>= 4.1.0)
-- [RxCocoa](https://github.com/ReactiveX/RxSwift) (>= 4.1.0)
+- [RxSwift](https://github.com/ReactiveX/RxSwift) (>= 4.4.0)
+- [RxCocoa](https://github.com/ReactiveX/RxSwift) (>= 4.4.0)
 
 ## Requirements
 
@@ -124,7 +124,9 @@ $ swift package generate-xcodeproj
     ```
 
     ⚠️ With Carthage, RxKeyboard only supports binary installation:
-    
+    * 0.9.2
+        * Xcode 10.1 (10B61)
+        * Swift 4.2.1 (swiftlang-1000.11.42 clang-1000.11.45.1)
     * 0.9.0
         * Xcode 10 (10A255)
         * Swift 4.2 (swiftlang-1000.11.37.1 clang-1000.11.45.1)

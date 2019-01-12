@@ -1,4 +1,4 @@
-osx_image: xcode10
+osx_image: xcode10.1
 language: objective-c
 sudo: required
 env:
@@ -12,7 +12,7 @@ env:
     - FRAMEWORK="RxKeyboard"
   matrix:
     - SDK="$IOS_SDK"      TEST=0  SWIFT_VERSION=4.0 DESTINATION="platform=iOS Simulator,name=iPhone 8"
-    - SDK="$IOS_SDK"      TEST=0  SWIFT_VERSION=4.2 DESTINATION="platform=iOS Simulator,name=iPhone 8"
+    - SDK="$IOS_SDK"      TEST=0  SWIFT_VERSION=4.2.1 DESTINATION="platform=iOS Simulator,name=iPhone 8"
 
 install:
   - eval "$(curl -sL https://gist.githubusercontent.com/kylef/5c0475ff02b7c7671d2a/raw/9f442512a46d7a2af7b850d65a7e9bd31edfb09b/swiftenv-install.sh)"
