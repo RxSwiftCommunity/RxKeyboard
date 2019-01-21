@@ -49,8 +49,8 @@ RxKeyboard.instance.frame
 
     ```swift
     RxKeyboard.instance.visibleHeight
-      .drive(onNext: { [weak self] keyboardVisibleHeight in
-        self?.scrollView.contentInset.bottom = keyboardVisibleHeight
+      .drive(onNext: { [scrollView] keyboardVisibleHeight in
+        scrollView.contentInset.bottom = keyboardVisibleHeight
       })
       .disposed(by: disposeBag)
     ```
@@ -59,8 +59,8 @@ RxKeyboard.instance.frame
 
     ```swift
     RxKeyboard.instance.willShowVisibleHeight
-      .drive(onNext: { [weak self] keyboardVisibleHeight in
-        self?.scrollView.contentOffset.y += keyboardVisibleHeight
+      .drive(onNext: { [scrollView] keyboardVisibleHeight in
+        scrollView.contentOffset.y += keyboardVisibleHeight
       })
       .disposed(by: disposeBag)
     ```
@@ -71,8 +71,8 @@ RxKeyboard.instance.frame
 
     ```swift
     RxKeyboard.instance.visibleHeight
-      .drive(onNext: { [weak self] keyboardVisibleHeight in
-        self?.toolbar.frame.origin.y = self?.view.frame.height - self?.toolbar.frame.height - keyboardVisibleHeight
+      .drive(onNext: { [toolbar, view] keyboardVisibleHeight in
+        toolbar.frame.origin.y = view.frame.height - toolbar.frame.height - keyboardVisibleHeight
       })
       .disposed(by: disposeBag)
     ```
@@ -81,8 +81,8 @@ RxKeyboard.instance.frame
 
     ```swift
     RxKeyboard.instance.visibleHeight
-      .drive(onNext: { [weak self] keyboardVisibleHeight in
-        self?.toolbarBottomConstraint.constant = -1 * keyboardVisibleHeight
+      .drive(onNext: { [toolbarBottomConstraint] keyboardVisibleHeight in
+        toolbarBottomConstraint.constant = -1 * keyboardVisibleHeight
       })
       .disposed(by: disposeBag)
     ```
