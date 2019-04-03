@@ -12,8 +12,8 @@ Pod::Spec.new do |s|
   s.requires_arc     = true
   s.swift_version    = "5.0"
 
-  s.dependency 'RxSwift', '>= 4.4.0'
-  s.dependency 'RxCocoa', '>= 4.4.0'
+  s.dependency 'RxSwift', '>= 4.5.0'
+  s.dependency 'RxCocoa', '>= 4.5.0'
 
   s.ios.deployment_target = '8.0'
 end
