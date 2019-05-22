@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'RxKeyboard'
-  s.version          = '0.9.3'
+  s.version          = '1.0.0'
   s.summary          = 'Reactive Keyboard in iOS'
   s.homepage         = 'https://github.com/RxSwiftCommunity/RxKeyboard'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }

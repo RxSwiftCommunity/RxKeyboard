@@ -7,7 +7,7 @@ PODS:
   - RxCocoa (5.0.0):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
-  - RxKeyboard (0.9.3):
+  - RxKeyboard (1.0.0):
     - RxCocoa (>= 5.0.0)
     - RxSwift (>= 5.0.0)
   - RxRelay (5.0.0):
@@ -53,7 +53,7 @@ SPEC CHECKSUMS:
   ManualLayout: 68ac8cfa6b5f656f7a9fadec3730208b95986880
   ReusableKit: d0b040de03b293288b0ca27a78602691d3346d9b
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
-  RxKeyboard: 72d3882561aaf041fc50d858c586fae043f83fad
+  RxKeyboard: d428f3dd891e4496e95d6dd142a9cf48778a6d22
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
