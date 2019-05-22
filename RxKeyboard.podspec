@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'RxKeyboard'
-  s.version          = '0.9.2'
+  s.version          = '0.9.3'
   s.summary          = 'Reactive Keyboard in iOS'
   s.homepage         = 'https://github.com/RxSwiftCommunity/RxKeyboard'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -12,8 +12,8 @@ Pod::Spec.new do |s|
   s.requires_arc     = true
   s.swift_version    = "5.0"
 
-  s.dependency 'RxSwift', '>= 4.5.0'
-  s.dependency 'RxCocoa', '>= 4.5.0'
+  s.dependency 'RxSwift', '>= 5.0.0'
+  s.dependency 'RxCocoa', '>= 5.0.0'
 
   s.ios.deployment_target = '8.0'
 end
