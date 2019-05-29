@@ -13,9 +13,9 @@ PODS:
   - RxRelay (5.0.0):
     - RxSwift (~> 5)
   - RxSwift (5.0.0)
-  - SnapKit (4.2.0)
+  - SnapKit (5.0.0)
   - SwiftyColor (1.2.0)
-  - SwiftyImage (1.4.0)
+  - SwiftyImage (1.5.0)
   - Then (2.4.0)
   - "UITextView+Placeholder (1.2.1)"
 
@@ -56,12 +56,12 @@ SPEC CHECKSUMS:
   RxKeyboard: 6683c4344304a00f943c158bd8a43ce5469c82a7
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
-  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
   SwiftyColor: ac23e6c0b561838c1ef0f554ff170cceba14546b
-  SwiftyImage: 03eda95ec96406846ee6f72a16897483bf8d4c4a
+  SwiftyImage: b4f0523c4a775c79c45dd328f42ed9b3111d5898
   Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
   "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
 
-PODFILE CHECKSUM: 49cf5def62bcfa2dfbe0c5118a9372a4162ec992
+PODFILE CHECKSUM: 217b0b1c7b2faddc54272a5bde63843c54f48190
 
-COCOAPODS: 1.6.2
+COCOAPODS: 1.6.1
