@@ -163,7 +163,7 @@ extension RxKeyboard: UIGestureRecognizerDelegate {
         _ gestureRecognizer: UIGestureRecognizer,
         shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer
     ) -> Bool {
-        gestureRecognizer === panRecognizer
+        return gestureRecognizer === panRecognizer
     }
 }
 
