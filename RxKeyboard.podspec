@@ -8,9 +8,9 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/RxSwiftCommunity/RxKeyboard.git',
                          :tag => s.version.to_s }
   s.source_files     = 'Sources/**/*.swift'
-  s.frameworks       = 'UIKit', 'Foundation'
+  s.frameworks       = 'UIKit'
   s.requires_arc     = true
-  s.swift_version    = "5.0"
+  s.swift_version    = "5.1"
 
   s.dependency 'RxSwift', '~> 6.0'
   s.dependency 'RxCocoa', '~> 6.0'
