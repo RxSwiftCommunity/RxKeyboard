@@ -126,8 +126,8 @@ public class RxKeyboard: NSObject, RxKeyboardType {
     self.panRecognizer.delegate = self
     
     UIApplication.rx.didFinishLaunching
-      .map { _ in Void() }
-      .startWith(Void()) // when RxKeyboard is initialized before UIApplication.window is created
+      .map { _ in () }
+      .startWith(()) // when RxKeyboard is initialized before UIApplication.window is created
       .subscribe(onNext: { _ in
         UIApplication.shared.windows.first?.addGestureRecognizer(self.panRecognizer)
       })
