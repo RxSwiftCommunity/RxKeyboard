@@ -1,14 +1,32 @@
-.DS_Store
+# Xcode
+
 sourcekitten-output.json
 docs/
-/.build
-/Packages
 /*.xcodeproj
 **/xcuserdata
 **/xcshareddata
-Pods/
-Carthage/
-Examples/**/Podfile.lock
 *.xcconfig
 *.framework.zip
+
+# CocoaPods
+
+Pods/
+Examples/**/Podfile.lock
+
+# Carthage
+
+Carthage/
+
+# Various
+
+.DS_Store
+
+# Swift Package Manager
+
+.build/
+Packages/
+.swiftpm
+
+# AppCode
+
 .idea/
