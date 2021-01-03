@@ -1,23 +1,23 @@
 PODS:
   - CGFloatLiteral (0.5.0)
   - ManualLayout (1.3.0)
-  - ReusableKit (2.1.0):
-    - ReusableKit/Core (= 2.1.0)
-  - ReusableKit/Core (2.1.0)
-  - RxCocoa (5.0.0):
-    - RxRelay (~> 5)
-    - RxSwift (~> 5)
-  - RxKeyboard (1.0.0):
-    - RxCocoa (~> 5.0)
-    - RxSwift (~> 5.0)
-  - RxRelay (5.0.0):
-    - RxSwift (~> 5)
-  - RxSwift (5.0.0)
-  - SnapKit (5.0.0)
-  - SwiftyColor (1.2.0)
-  - SwiftyImage (1.5.0)
-  - Then (2.4.0)
-  - "UITextView+Placeholder (1.2.1)"
+  - ReusableKit (3.0.0):
+    - ReusableKit/Core (= 3.0.0)
+  - ReusableKit/Core (3.0.0)
+  - RxCocoa (6.0.0):
+    - RxRelay (= 6.0.0)
+    - RxSwift (= 6.0.0)
+  - RxKeyboard (2.0.0):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxRelay (6.0.0):
+    - RxSwift (= 6.0.0)
+  - RxSwift (6.0.0)
+  - SnapKit (5.0.1)
+  - SwiftyColor (1.2.1)
+  - SwiftyImage (1.6.0)
+  - Then (2.7.0)
+  - "UITextView+Placeholder (1.4.0)"
 
 DEPENDENCIES:
   - CGFloatLiteral
@@ -31,7 +31,7 @@ DEPENDENCIES:
   - "UITextView+Placeholder"
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - CGFloatLiteral
     - ManualLayout
     - ReusableKit
@@ -51,17 +51,17 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   CGFloatLiteral: 0328648f666e3cb2263d5ee3972df9d320786d25
   ManualLayout: 68ac8cfa6b5f656f7a9fadec3730208b95986880
-  ReusableKit: d0b040de03b293288b0ca27a78602691d3346d9b
-  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
-  RxKeyboard: 6683c4344304a00f943c158bd8a43ce5469c82a7
-  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
-  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
-  SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
-  SwiftyColor: ac23e6c0b561838c1ef0f554ff170cceba14546b
-  SwiftyImage: b4f0523c4a775c79c45dd328f42ed9b3111d5898
-  Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
-  "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
+  ReusableKit: e5f853ad4652e411f96b6119b2488afa12929be6
+  RxCocoa: 3f79328fafa3645b34600f37c31e64c73ae3a80e
+  RxKeyboard: 268e4ed61c03b730c8ca71aa1cb2de40a7848b21
+  RxRelay: 8d593be109c06ea850df027351beba614b012ffb
+  RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftyColor: a2f468071c1b96be1ba41a0be7cf70d645cd7dcc
+  SwiftyImage: 65c71a147f417fc0fe137d17b135aaa666279a09
+  Then: acfe0be7e98221c6204e12f8161459606d5d822d
+  "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
 PODFILE CHECKSUM: 217b0b1c7b2faddc54272a5bde63843c54f48190
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.10.0
