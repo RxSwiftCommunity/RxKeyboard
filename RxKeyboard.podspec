@@ -15,5 +15,5 @@ Pod::Spec.new do |s|
   s.dependency 'RxSwift', '~> 6.0'
   s.dependency 'RxCocoa', '~> 6.0'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '9.0'
 end

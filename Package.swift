@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "RxKeyboard",
     platforms: [
-        .iOS(.v10)
+        .iOS(.v9)
     ],
     products: [
         .library(name: "RxKeyboard", targets: ["RxKeyboard"]),
