@@ -87,7 +87,7 @@ GEM
       nanaimo (~> 0.3.0)
 
 PLATFORMS
-  universal-darwin-19
+  ruby
 
 DEPENDENCIES
   cocoapods (~> 1.10)
