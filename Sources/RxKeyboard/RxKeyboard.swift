@@ -63,7 +63,7 @@ public class RxKeyboard: NSObject, RxKeyboardType {
     )
     let frameVariable = BehaviorRelay<CGRect>(value: defaultFrame)
     self.frame = frameVariable.asDriver().distinctUntilChanged()
-    self.visibleHeight = self.frame.map { UIScreen.main.bounds.height - $0.origin.y }
+    self.visibleHeight = self.frame.map { UIScreen.main.bounds.intersection($0).height }
     self.willShowVisibleHeight = self.visibleHeight
       .scan((visibleHeight: 0, isShowing: false)) { lastState, newVisibleHeight in
         return (visibleHeight: newVisibleHeight, isShowing: lastState.visibleHeight == 0 && newVisibleHeight > 0)
