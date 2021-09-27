@@ -12,7 +12,7 @@ RxKeyboard provides a reactive way of observing keyboard frame changes. Forget a
 
 ## Getting Started
 
-RxKeyboard provides two [`Driver`](https://github.com/ReactiveX/RxSwift/blob/master/Documentation/Units.md#driver-unit)s.
+RxKeyboard provides two [`Driver`](https://github.com/ReactiveX/RxSwift/blob/master/Documentation/Traits.md#driver)s.
 
 ```swift
 /// An observable keyboard frame.
@@ -93,13 +93,13 @@ RxKeyboard.instance.frame
     
 ## Dependencies
 
-- [RxSwift](https://github.com/ReactiveX/RxSwift) (>= 4.4.0)
-- [RxCocoa](https://github.com/ReactiveX/RxSwift) (>= 4.4.0)
+- [RxSwift](https://github.com/ReactiveX/RxSwift) (>= 6.0)
+- [RxCocoa](https://github.com/ReactiveX/RxSwift) (>=6.0)
 
 ## Requirements
 
-- Swift 4
-- iOS 8+
+- Swift 5.1
+- iOS 9+
 
 ## Contributing
 
