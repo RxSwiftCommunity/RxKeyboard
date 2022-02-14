@@ -91,7 +91,7 @@ class MessageListViewController: UIViewController {
 
     RxKeyboard.instance.visibleHeight
       .drive(onNext: { [weak self] keyboardVisibleHeight in
-        guard let `self` = self, self.didSetupViewConstraints else { return }
+        guard let self = self, self.didSetupViewConstraints else { return }
         self.messageInputBar.snp.updateConstraints { make in
           if #available(iOS 11.0, *) {
             make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-keyboardVisibleHeight)
@@ -116,7 +116,7 @@ class MessageListViewController: UIViewController {
 
     self.messageInputBar.rx.sendButtonTap
       .subscribe(onNext: { [weak self] text in
-        guard let `self` = self else { return }
+        guard let self = self else { return }
         let message = Message(user: .me, text: text)
         self.messages.append(message)
         let indexPath = IndexPath(item: self.messages.count - 1, section: 0)
