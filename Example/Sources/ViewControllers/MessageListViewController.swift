@@ -90,38 +90,40 @@ class MessageListViewController: UIViewController {
     }
 
     RxKeyboard.instance.visibleHeight
-      .drive(onNext: { [weak self] keyboardVisibleHeight in
-        guard let `self` = self, self.didSetupViewConstraints else { return }
-        self.messageInputBar.snp.updateConstraints { make in
+      .withUnretained(self)
+      .drive(onNext: { (owner, keyboardVisibleHeight) in
+        guard owner.didSetupViewConstraints else { return }
+        owner.messageInputBar.snp.updateConstraints { make in
           if #available(iOS 11.0, *) {
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-keyboardVisibleHeight)
+            make.bottom.equalTo(owner.view.safeAreaLayoutGuide.snp.bottom).offset(-keyboardVisibleHeight)
           } else {
-            make.bottom.equalTo(self.bottomLayoutGuide.snp.top).offset(-keyboardVisibleHeight)
+            make.bottom.equalTo(owner.bottomLayoutGuide.snp.top).offset(-keyboardVisibleHeight)
           }
         }
-        self.view.setNeedsLayout()
+        owner.view.setNeedsLayout()
         UIView.animate(withDuration: 0) {
-          self.collectionView.contentInset.bottom = keyboardVisibleHeight + self.messageInputBar.height
-          self.collectionView.scrollIndicatorInsets.bottom = self.collectionView.contentInset.bottom
-          self.view.layoutIfNeeded()
+          owner.collectionView.contentInset.bottom = keyboardVisibleHeight + owner.messageInputBar.height
+          owner.collectionView.scrollIndicatorInsets.bottom = owner.collectionView.contentInset.bottom
+          owner.view.layoutIfNeeded()
         }
       })
       .disposed(by: self.disposeBag)
 
     RxKeyboard.instance.willShowVisibleHeight
-      .drive(onNext: { keyboardVisibleHeight in
-        self.collectionView.contentOffset.y += keyboardVisibleHeight
+      .withUnretained(self)
+      .drive(onNext: { (owner, keyboardVisibleHeight) in
+        owner.collectionView.contentOffset.y += keyboardVisibleHeight
       })
       .disposed(by: self.disposeBag)
 
     self.messageInputBar.rx.sendButtonTap
-      .subscribe(onNext: { [weak self] text in
-        guard let `self` = self else { return }
+      .withUnretained(self)
+      .subscribe(onNext: { (owner, text) in
         let message = Message(user: .me, text: text)
-        self.messages.append(message)
-        let indexPath = IndexPath(item: self.messages.count - 1, section: 0)
-        self.collectionView.insertItems(at: [indexPath])
-        self.collectionView.scrollToItem(at: indexPath, at: [], animated: true)
+        owner.messages.append(message)
+        let indexPath = IndexPath(item: owner.messages.count - 1, section: 0)
+        owner.collectionView.insertItems(at: [indexPath])
+        owner.collectionView.scrollToItem(at: indexPath, at: [], animated: true)
       })
       .disposed(by: self.disposeBag)
   }
