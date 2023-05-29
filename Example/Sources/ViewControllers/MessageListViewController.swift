@@ -94,14 +94,21 @@ class MessageListViewController: UIViewController {
         guard let `self` = self, self.didSetupViewConstraints else { return }
         self.messageInputBar.snp.updateConstraints { make in
           if #available(iOS 11.0, *) {
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-keyboardVisibleHeight)
+            let safeLayoutGuideBottomInset = self.view.safeAreaInsets.bottom
+            let offset = keyboardVisibleHeight > 0 ? -keyboardVisibleHeight + safeLayoutGuideBottomInset : -keyboardVisibleHeight
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(offset)
           } else {
             make.bottom.equalTo(self.bottomLayoutGuide.snp.top).offset(-keyboardVisibleHeight)
           }
         }
         self.view.setNeedsLayout()
         UIView.animate(withDuration: 0) {
-          self.collectionView.contentInset.bottom = keyboardVisibleHeight + self.messageInputBar.height
+          var inset = keyboardVisibleHeight + self.messageInputBar.height
+          if keyboardVisibleHeight > 0, #available(iOS 11.0, *) {
+            let safeLayoutGuideBottomInset = self.view.safeAreaInsets.bottom
+            inset -= safeLayoutGuideBottomInset
+          }
+          self.collectionView.contentInset.bottom = inset
           self.collectionView.scrollIndicatorInsets.bottom = self.collectionView.contentInset.bottom
           self.view.layoutIfNeeded()
         }
@@ -109,8 +116,14 @@ class MessageListViewController: UIViewController {
       .disposed(by: self.disposeBag)
 
     RxKeyboard.instance.willShowVisibleHeight
-      .drive(onNext: { keyboardVisibleHeight in
-        self.collectionView.contentOffset.y += keyboardVisibleHeight
+      .drive(onNext: { [weak self] keyboardVisibleHeight in
+        guard let `self` = self else { return }
+        if #available(iOS 11.0, *) {
+          let safeLayoutGuideBottomInset = self.view.safeAreaInsets.bottom
+          self.collectionView.contentOffset.y += keyboardVisibleHeight - safeLayoutGuideBottomInset
+        } else {
+          self.collectionView.contentOffset.y += keyboardVisibleHeight
+        }
       })
       .disposed(by: self.disposeBag)
 
